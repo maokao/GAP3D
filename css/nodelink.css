@@ -1,0 +1,15 @@
+.nl_node {
+  stroke: #000;
+  stroke-width: 0.5px;
+}
+
+.nl_link {
+  
+  stroke-width: 1px;
+
+}
+
+.nl_node text{
+  fill: #666;
+  font-family: Helvetica
+}

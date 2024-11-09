@@ -1,0 +1,1681 @@
+"Squad","Pos","stat","total_value"
+"Arsenal","DF","Aer.lost",118
+"Arsenal","DF","Ass",5
+"Arsenal","DF","Blocks",119
+"Arsenal","DF","Cha.lost",68
+"Arsenal","DF","Clr",245
+"Arsenal","DF","Cmp.",86.02
+"Arsenal","DF","Dist",14.8571428571429
+"Arsenal","DF","Err",7
+"Arsenal","DF","FK",0
+"Arsenal","DF","G.Sh",0.98
+"Arsenal","DF","Gls",11
+"Arsenal","DF","Int",107
+"Arsenal","DF","PK",0
+"Arsenal","DF","PenS",0
+"Arsenal","DF","Rcd",1
+"Arsenal","DF","Saves",0
+"Arsenal","DF","Sh",77
+"Arsenal","DF","SoT",24
+"Arsenal","DF","Tkl",179
+"Arsenal","DF","TklW",105
+"Arsenal","DF","xG",8.2
+"Aston Villa","DF","Aer.lost",107
+"Aston Villa","DF","Ass",5
+"Aston Villa","DF","Blocks",143
+"Aston Villa","DF","Cha.lost",77
+"Aston Villa","DF","Clr",353
+"Aston Villa","DF","Cmp.",87.0666666666667
+"Aston Villa","DF","Dist",13.3428571428571
+"Aston Villa","DF","Err",6
+"Aston Villa","DF","FK",5
+"Aston Villa","DF","G.Sh",0.61
+"Aston Villa","DF","Gls",8
+"Aston Villa","DF","Int",100
+"Aston Villa","DF","PK",0
+"Aston Villa","DF","PenS",0
+"Aston Villa","DF","Rcd",0
+"Aston Villa","DF","Saves",0
+"Aston Villa","DF","Sh",99
+"Aston Villa","DF","SoT",34
+"Aston Villa","DF","Tkl",211
+"Aston Villa","DF","TklW",116
+"Aston Villa","DF","xG",11.3
+"Bournemouth","DF","Aer.lost",203
+"Bournemouth","DF","Ass",6
+"Bournemouth","DF","Blocks",209
+"Bournemouth","DF","Cha.lost",121
+"Bournemouth","DF","Clr",506
+"Bournemouth","DF","Cmp.",76.1125
+"Bournemouth","DF","Dist",12.18
+"Bournemouth","DF","Err",8
+"Bournemouth","DF","FK",0
+"Bournemouth","DF","G.Sh",0.56
+"Bournemouth","DF","Gls",4
+"Bournemouth","DF","Int",140
+"Bournemouth","DF","PK",0
+"Bournemouth","DF","PenS",0
+"Bournemouth","DF","Rcd",0
+"Bournemouth","DF","Saves",0
+"Bournemouth","DF","Sh",28
+"Bournemouth","DF","SoT",10
+"Bournemouth","DF","Tkl",266
+"Bournemouth","DF","TklW",164
+"Bournemouth","DF","xG",2.9
+"Brentford","DF","Aer.lost",201
+"Brentford","DF","Ass",4
+"Brentford","DF","Blocks",179
+"Brentford","DF","Cha.lost",83
+"Brentford","DF","Clr",552
+"Brentford","DF","Cmp.",73.0727272727273
+"Brentford","DF","Dist",14.75
+"Brentford","DF","Err",11
+"Brentford","DF","FK",0
+"Brentford","DF","G.Sh",1.06
+"Brentford","DF","Gls",11
+"Brentford","DF","Int",158
+"Brentford","DF","PK",0
+"Brentford","DF","PenS",0
+"Brentford","DF","Rcd",1
+"Brentford","DF","Saves",0
+"Brentford","DF","Sh",117
+"Brentford","DF","SoT",31
+"Brentford","DF","Tkl",241
+"Brentford","DF","TklW",144
+"Brentford","DF","xG",13
+"Brighton","DF","Aer.lost",122
+"Brighton","DF","Ass",6
+"Brighton","DF","Blocks",158
+"Brighton","DF","Cha.lost",87
+"Brighton","DF","Clr",301
+"Brighton","DF","Cmp.",87.3625
+"Brighton","DF","Dist",14.85
+"Brighton","DF","Err",7
+"Brighton","DF","FK",4
+"Brighton","DF","G.Sh",0.49
+"Brighton","DF","Gls",8
+"Brighton","DF","Int",120
+"Brighton","DF","PK",0
+"Brighton","DF","PenS",0
+"Brighton","DF","Rcd",1
+"Brighton","DF","Saves",0
+"Brighton","DF","Sh",79
+"Brighton","DF","SoT",34
+"Brighton","DF","Tkl",169
+"Brighton","DF","TklW",103
+"Brighton","DF","xG",7.6
+"Burnley","DF","Aer.lost",218
+"Burnley","DF","Ass",5
+"Burnley","DF","Blocks",196
+"Burnley","DF","Cha.lost",120
+"Burnley","DF","Clr",504
+"Burnley","DF","Cmp.",80.7
+"Burnley","DF","Dist",16.4166666666667
+"Burnley","DF","Err",12
+"Burnley","DF","FK",0
+"Burnley","DF","G.Sh",0.36
+"Burnley","DF","Gls",4
+"Burnley","DF","Int",132
+"Burnley","DF","PK",0
+"Burnley","DF","PenS",0
+"Burnley","DF","Rcd",1
+"Burnley","DF","Saves",0
+"Burnley","DF","Sh",56
+"Burnley","DF","SoT",13
+"Burnley","DF","Tkl",246
+"Burnley","DF","TklW",129
+"Burnley","DF","xG",3.8
+"Chelsea","DF","Aer.lost",160
+"Chelsea","DF","Ass",6
+"Chelsea","DF","Blocks",183
+"Chelsea","DF","Cha.lost",90
+"Chelsea","DF","Clr",500
+"Chelsea","DF","Cmp.",83.8090909090909
+"Chelsea","DF","Dist",15.325
+"Chelsea","DF","Err",9
+"Chelsea","DF","FK",4
+"Chelsea","DF","G.Sh",0.52
+"Chelsea","DF","Gls",6
+"Chelsea","DF","Int",127
+"Chelsea","DF","PK",0
+"Chelsea","DF","PenS",0
+"Chelsea","DF","Rcd",2
+"Chelsea","DF","Saves",0
+"Chelsea","DF","Sh",74
+"Chelsea","DF","SoT",22
+"Chelsea","DF","Tkl",277
+"Chelsea","DF","TklW",161
+"Chelsea","DF","xG",6.6
+"Crystal Palace","DF","Aer.lost",172
+"Crystal Palace","DF","Ass",3
+"Crystal Palace","DF","Blocks",163
+"Crystal Palace","DF","Cha.lost",61
+"Crystal Palace","DF","Clr",547
+"Crystal Palace","DF","Cmp.",79.5333333333333
+"Crystal Palace","DF","Dist",12.0666666666667
+"Crystal Palace","DF","Err",2
+"Crystal Palace","DF","FK",1
+"Crystal Palace","DF","G.Sh",0.48
+"Crystal Palace","DF","Gls",4
+"Crystal Palace","DF","Int",119
+"Crystal Palace","DF","PK",0
+"Crystal Palace","DF","PenS",0
+"Crystal Palace","DF","Rcd",0
+"Crystal Palace","DF","Saves",0
+"Crystal Palace","DF","Sh",30
+"Crystal Palace","DF","SoT",11
+"Crystal Palace","DF","Tkl",276
+"Crystal Palace","DF","TklW",166
+"Crystal Palace","DF","xG",2.3
+"Everton","DF","Aer.lost",208
+"Everton","DF","Ass",4
+"Everton","DF","Blocks",226
+"Everton","DF","Cha.lost",129
+"Everton","DF","Clr",604
+"Everton","DF","Cmp.",74.0571428571429
+"Everton","DF","Dist",14.4666666666667
+"Everton","DF","Err",8
+"Everton","DF","FK",3
+"Everton","DF","G.Sh",0.52
+"Everton","DF","Gls",6
+"Everton","DF","Int",194
+"Everton","DF","PK",0
+"Everton","DF","PenS",0
+"Everton","DF","Rcd",1
+"Everton","DF","Saves",0
+"Everton","DF","Sh",83
+"Everton","DF","SoT",20
+"Everton","DF","Tkl",320
+"Everton","DF","TklW",197
+"Everton","DF","xG",8
+"Fulham","DF","Aer.lost",153
+"Fulham","DF","Ass",3
+"Fulham","DF","Blocks",203
+"Fulham","DF","Cha.lost",115
+"Fulham","DF","Clr",526
+"Fulham","DF","Cmp.",83.2
+"Fulham","DF","Dist",11.8
+"Fulham","DF","Err",11
+"Fulham","DF","FK",0
+"Fulham","DF","G.Sh",1.59
+"Fulham","DF","Gls",5
+"Fulham","DF","Int",229
+"Fulham","DF","PK",0
+"Fulham","DF","PenS",0
+"Fulham","DF","Rcd",2
+"Fulham","DF","Saves",0
+"Fulham","DF","Sh",53
+"Fulham","DF","SoT",19
+"Fulham","DF","Tkl",289
+"Fulham","DF","TklW",164
+"Fulham","DF","xG",5.1
+"Liverpool","DF","Aer.lost",100
+"Liverpool","DF","Ass",9
+"Liverpool","DF","Blocks",157
+"Liverpool","DF","Cha.lost",138
+"Liverpool","DF","Clr",346
+"Liverpool","DF","Cmp.",81.1875
+"Liverpool","DF","Dist",16.4
+"Liverpool","DF","Err",8
+"Liverpool","DF","FK",4
+"Liverpool","DF","G.Sh",0.36
+"Liverpool","DF","Gls",6
+"Liverpool","DF","Int",135
+"Liverpool","DF","PK",0
+"Liverpool","DF","PenS",0
+"Liverpool","DF","Rcd",1
+"Liverpool","DF","Saves",0
+"Liverpool","DF","Sh",108
+"Liverpool","DF","SoT",25
+"Liverpool","DF","Tkl",240
+"Liverpool","DF","TklW",165
+"Liverpool","DF","xG",7
+"Luton Town","DF","Aer.lost",185
+"Luton Town","DF","Ass",7
+"Luton Town","DF","Blocks",234
+"Luton Town","DF","Cha.lost",120
+"Luton Town","DF","Clr",565
+"Luton Town","DF","Cmp.",74.6090909090909
+"Luton Town","DF","Dist",13.69
+"Luton Town","DF","Err",7
+"Luton Town","DF","FK",1
+"Luton Town","DF","G.Sh",0.9
+"Luton Town","DF","Gls",6
+"Luton Town","DF","Int",206
+"Luton Town","DF","PK",0
+"Luton Town","DF","PenS",0
+"Luton Town","DF","Rcd",0
+"Luton Town","DF","Saves",0
+"Luton Town","DF","Sh",73
+"Luton Town","DF","SoT",21
+"Luton Town","DF","Tkl",305
+"Luton Town","DF","TklW",178
+"Luton Town","DF","xG",5.9
+"Manchester City","DF","Aer.lost",53
+"Manchester City","DF","Ass",3
+"Manchester City","DF","Blocks",66
+"Manchester City","DF","Cha.lost",44
+"Manchester City","DF","Clr",138
+"Manchester City","DF","Cmp.",93.24
+"Manchester City","DF","Dist",16.7625
+"Manchester City","DF","Err",4
+"Manchester City","DF","FK",1
+"Manchester City","DF","G.Sh",0.96
+"Manchester City","DF","Gls",7
+"Manchester City","DF","Int",64
+"Manchester City","DF","PK",0
+"Manchester City","DF","PenS",0
+"Manchester City","DF","Rcd",1
+"Manchester City","DF","Saves",0
+"Manchester City","DF","Sh",92
+"Manchester City","DF","SoT",33
+"Manchester City","DF","Tkl",92
+"Manchester City","DF","TklW",60
+"Manchester City","DF","xG",7.5
+"Manchester Utd","DF","Aer.lost",93
+"Manchester Utd","DF","Ass",7
+"Manchester Utd","DF","Blocks",156
+"Manchester Utd","DF","Cha.lost",57
+"Manchester Utd","DF","Clr",391
+"Manchester Utd","DF","Cmp.",86.0285714285714
+"Manchester Utd","DF","Dist",15.12
+"Manchester Utd","DF","Err",3
+"Manchester Utd","DF","FK",0
+"Manchester Utd","DF","G.Sh",0.4
+"Manchester Utd","DF","Gls",4
+"Manchester Utd","DF","Int",136
+"Manchester Utd","DF","PK",0
+"Manchester Utd","DF","PenS",0
+"Manchester Utd","DF","Rcd",1
+"Manchester Utd","DF","Saves",0
+"Manchester Utd","DF","Sh",58
+"Manchester Utd","DF","SoT",13
+"Manchester Utd","DF","Tkl",183
+"Manchester Utd","DF","TklW",116
+"Manchester Utd","DF","xG",5.1
+"Newcastle Utd","DF","Aer.lost",142
+"Newcastle Utd","DF","Ass",9
+"Newcastle Utd","DF","Blocks",176
+"Newcastle Utd","DF","Cha.lost",121
+"Newcastle Utd","DF","Clr",371
+"Newcastle Utd","DF","Cmp.",86.52
+"Newcastle Utd","DF","Dist",14.9714285714286
+"Newcastle Utd","DF","Err",9
+"Newcastle Utd","DF","FK",6
+"Newcastle Utd","DF","G.Sh",1.05
+"Newcastle Utd","DF","Gls",10
+"Newcastle Utd","DF","Int",122
+"Newcastle Utd","DF","PK",0
+"Newcastle Utd","DF","PenS",0
+"Newcastle Utd","DF","Rcd",0
+"Newcastle Utd","DF","Saves",0
+"Newcastle Utd","DF","Sh",76
+"Newcastle Utd","DF","SoT",20
+"Newcastle Utd","DF","Tkl",228
+"Newcastle Utd","DF","TklW",128
+"Newcastle Utd","DF","xG",7.2
+"Nott'ham Forest","DF","Aer.lost",177
+"Nott'ham Forest","DF","Ass",7
+"Nott'ham Forest","DF","Blocks",240
+"Nott'ham Forest","DF","Cha.lost",109
+"Nott'ham Forest","DF","Clr",683
+"Nott'ham Forest","DF","Cmp.",77.0615384615385
+"Nott'ham Forest","DF","Dist",18.675
+"Nott'ham Forest","DF","Err",5
+"Nott'ham Forest","DF","FK",2
+"Nott'ham Forest","DF","G.Sh",0.55
+"Nott'ham Forest","DF","Gls",4
+"Nott'ham Forest","DF","Int",174
+"Nott'ham Forest","DF","PK",0
+"Nott'ham Forest","DF","PenS",0
+"Nott'ham Forest","DF","Rcd",3
+"Nott'ham Forest","DF","Saves",0
+"Nott'ham Forest","DF","Sh",68
+"Nott'ham Forest","DF","SoT",20
+"Nott'ham Forest","DF","Tkl",366
+"Nott'ham Forest","DF","TklW",227
+"Nott'ham Forest","DF","xG",6.2
+"Sheffield Utd","DF","Aer.lost",211
+"Sheffield Utd","DF","Ass",5
+"Sheffield Utd","DF","Blocks",238
+"Sheffield Utd","DF","Cha.lost",129
+"Sheffield Utd","DF","Clr",605
+"Sheffield Utd","DF","Cmp.",70.3692307692308
+"Sheffield Utd","DF","Dist",14.3285714285714
+"Sheffield Utd","DF","Err",7
+"Sheffield Utd","DF","FK",0
+"Sheffield Utd","DF","G.Sh",0.24
+"Sheffield Utd","DF","Gls",4
+"Sheffield Utd","DF","Int",170
+"Sheffield Utd","DF","PK",0
+"Sheffield Utd","DF","PenS",0
+"Sheffield Utd","DF","Rcd",0
+"Sheffield Utd","DF","Saves",0
+"Sheffield Utd","DF","Sh",71
+"Sheffield Utd","DF","SoT",21
+"Sheffield Utd","DF","Tkl",281
+"Sheffield Utd","DF","TklW",155
+"Sheffield Utd","DF","xG",6.5
+"Tottenham","DF","Aer.lost",167
+"Tottenham","DF","Ass",10
+"Tottenham","DF","Blocks",204
+"Tottenham","DF","Cha.lost",128
+"Tottenham","DF","Clr",463
+"Tottenham","DF","Cmp.",88.0857142857143
+"Tottenham","DF","Dist",15.3333333333333
+"Tottenham","DF","Err",11
+"Tottenham","DF","FK",4
+"Tottenham","DF","G.Sh",1.16
+"Tottenham","DF","Gls",11
+"Tottenham","DF","Int",165
+"Tottenham","DF","PK",0
+"Tottenham","DF","PenS",0
+"Tottenham","DF","Rcd",2
+"Tottenham","DF","Saves",0
+"Tottenham","DF","Sh",87
+"Tottenham","DF","SoT",25
+"Tottenham","DF","Tkl",336
+"Tottenham","DF","TklW",213
+"Tottenham","DF","xG",9.4
+"West Ham","DF","Aer.lost",145
+"West Ham","DF","Ass",7
+"West Ham","DF","Blocks",161
+"West Ham","DF","Cha.lost",56
+"West Ham","DF","Clr",470
+"West Ham","DF","Cmp.",82.1625
+"West Ham","DF","Dist",15.5333333333333
+"West Ham","DF","Err",5
+"West Ham","DF","FK",0
+"West Ham","DF","G.Sh",0.44
+"West Ham","DF","Gls",6
+"West Ham","DF","Int",123
+"West Ham","DF","PK",0
+"West Ham","DF","PenS",0
+"West Ham","DF","Rcd",1
+"West Ham","DF","Saves",0
+"West Ham","DF","Sh",64
+"West Ham","DF","SoT",17
+"West Ham","DF","Tkl",209
+"West Ham","DF","TklW",130
+"West Ham","DF","xG",5.9
+"Wolves","DF","Aer.lost",169
+"Wolves","DF","Ass",2
+"Wolves","DF","Blocks",209
+"Wolves","DF","Cha.lost",57
+"Wolves","DF","Clr",499
+"Wolves","DF","Cmp.",83.3833333333333
+"Wolves","DF","Dist",12.5333333333333
+"Wolves","DF","Err",7
+"Wolves","DF","FK",0
+"Wolves","DF","G.Sh",0.47
+"Wolves","DF","Gls",6
+"Wolves","DF","Int",100
+"Wolves","DF","PK",0
+"Wolves","DF","PenS",0
+"Wolves","DF","Rcd",0
+"Wolves","DF","Saves",0
+"Wolves","DF","Sh",76
+"Wolves","DF","SoT",23
+"Wolves","DF","Tkl",186
+"Wolves","DF","TklW",105
+"Wolves","DF","xG",9
+"Arsenal","FW","Aer.lost",142
+"Arsenal","FW","Ass",5
+"Arsenal","FW","Blocks",133
+"Arsenal","FW","Cha.lost",88
+"Arsenal","FW","Clr",60
+"Arsenal","FW","Cmp.",79.3
+"Arsenal","FW","Dist",15.55
+"Arsenal","FW","Err",2
+"Arsenal","FW","FK",0
+"Arsenal","FW","G.Sh",0.62
+"Arsenal","FW","Gls",37
+"Arsenal","FW","Int",46
+"Arsenal","FW","PK",5
+"Arsenal","FW","PenS",0
+"Arsenal","FW","Rcd",0
+"Arsenal","FW","Saves",0
+"Arsenal","FW","Sh",265
+"Arsenal","FW","SoT",87
+"Arsenal","FW","Tkl",168
+"Arsenal","FW","TklW",105
+"Arsenal","FW","xG",34.6
+"Aston Villa","FW","Aer.lost",99
+"Aston Villa","FW","Ass",9
+"Aston Villa","FW","Blocks",49
+"Aston Villa","FW","Cha.lost",35
+"Aston Villa","FW","Clr",34
+"Aston Villa","FW","Cmp.",78.86
+"Aston Villa","FW","Dist",15.2
+"Aston Villa","FW","Err",0
+"Aston Villa","FW","FK",0
+"Aston Villa","FW","G.Sh",0.57
+"Aston Villa","FW","Gls",27
+"Aston Villa","FW","Int",16
+"Aston Villa","FW","PK",0
+"Aston Villa","FW","PenS",0
+"Aston Villa","FW","Rcd",0
+"Aston Villa","FW","Saves",0
+"Aston Villa","FW","Sh",168
+"Aston Villa","FW","SoT",68
+"Aston Villa","FW","Tkl",41
+"Aston Villa","FW","TklW",20
+"Aston Villa","FW","xG",23.9
+"Bournemouth","FW","Aer.lost",315
+"Bournemouth","FW","Ass",3
+"Bournemouth","FW","Blocks",136
+"Bournemouth","FW","Cha.lost",89
+"Bournemouth","FW","Clr",131
+"Bournemouth","FW","Cmp.",62.6888888888889
+"Bournemouth","FW","Dist",16.1111111111111
+"Bournemouth","FW","Err",0
+"Bournemouth","FW","FK",4
+"Bournemouth","FW","G.Sh",0.82
+"Bournemouth","FW","Gls",32
+"Bournemouth","FW","Int",51
+"Bournemouth","FW","PK",1
+"Bournemouth","FW","PenS",0
+"Bournemouth","FW","Rcd",0
+"Bournemouth","FW","Saves",0
+"Bournemouth","FW","Sh",274
+"Bournemouth","FW","SoT",93
+"Bournemouth","FW","Tkl",176
+"Bournemouth","FW","TklW",106
+"Bournemouth","FW","xG",34
+"Brentford","FW","Aer.lost",274
+"Brentford","FW","Ass",4
+"Brentford","FW","Blocks",111
+"Brentford","FW","Cha.lost",90
+"Brentford","FW","Clr",85
+"Brentford","FW","Cmp.",70.5333333333333
+"Brentford","FW","Dist",15.4
+"Brentford","FW","Err",0
+"Brentford","FW","FK",12
+"Brentford","FW","G.Sh",0.74
+"Brentford","FW","Gls",27
+"Brentford","FW","Int",42
+"Brentford","FW","PK",3
+"Brentford","FW","PenS",0
+"Brentford","FW","Rcd",0
+"Brentford","FW","Saves",0
+"Brentford","FW","Sh",179
+"Brentford","FW","SoT",64
+"Brentford","FW","Tkl",118
+"Brentford","FW","TklW",67
+"Brentford","FW","xG",29.1
+"Brighton","FW","Aer.lost",86
+"Brighton","FW","Ass",1
+"Brighton","FW","Blocks",98
+"Brighton","FW","Cha.lost",91
+"Brighton","FW","Clr",75
+"Brighton","FW","Cmp.",78.125
+"Brighton","FW","Dist",15.6428571428571
+"Brighton","FW","Err",1
+"Brighton","FW","FK",2
+"Brighton","FW","G.Sh",1.02
+"Brighton","FW","Gls",33
+"Brighton","FW","Int",54
+"Brighton","FW","PK",4
+"Brighton","FW","PenS",0
+"Brighton","FW","Rcd",0
+"Brighton","FW","Saves",0
+"Brighton","FW","Sh",219
+"Brighton","FW","SoT",94
+"Brighton","FW","Tkl",169
+"Brighton","FW","TklW",85
+"Brighton","FW","xG",28.1
+"Burnley","FW","Aer.lost",236
+"Burnley","FW","Ass",5
+"Burnley","FW","Blocks",60
+"Burnley","FW","Cha.lost",45
+"Burnley","FW","Clr",58
+"Burnley","FW","Cmp.",69.6285714285714
+"Burnley","FW","Dist",16.12
+"Burnley","FW","Err",1
+"Burnley","FW","FK",0
+"Burnley","FW","G.Sh",0.57
+"Burnley","FW","Gls",14
+"Burnley","FW","Int",14
+"Burnley","FW","PK",1
+"Burnley","FW","PenS",0
+"Burnley","FW","Rcd",1
+"Burnley","FW","Saves",0
+"Burnley","FW","Sh",103
+"Burnley","FW","SoT",47
+"Burnley","FW","Tkl",73
+"Burnley","FW","TklW",43
+"Burnley","FW","xG",14.3
+"Chelsea","FW","Aer.lost",169
+"Chelsea","FW","Ass",2
+"Chelsea","FW","Blocks",167
+"Chelsea","FW","Cha.lost",134
+"Chelsea","FW","Clr",131
+"Chelsea","FW","Cmp.",78.34375
+"Chelsea","FW","Dist",15.2571428571429
+"Chelsea","FW","Err",9
+"Chelsea","FW","FK",8
+"Chelsea","FW","G.Sh",0.97
+"Chelsea","FW","Gls",41
+"Chelsea","FW","Int",115
+"Chelsea","FW","PK",9
+"Chelsea","FW","PenS",0
+"Chelsea","FW","Rcd",0
+"Chelsea","FW","Saves",0
+"Chelsea","FW","Sh",236
+"Chelsea","FW","SoT",92
+"Chelsea","FW","Tkl",196
+"Chelsea","FW","TklW",102
+"Chelsea","FW","xG",40.8
+"Crystal Palace","FW","Aer.lost",161
+"Crystal Palace","FW","Ass",4
+"Crystal Palace","FW","Blocks",90
+"Crystal Palace","FW","Cha.lost",50
+"Crystal Palace","FW","Clr",62
+"Crystal Palace","FW","Cmp.",73.575
+"Crystal Palace","FW","Dist",16.32
+"Crystal Palace","FW","Err",0
+"Crystal Palace","FW","FK",5
+"Crystal Palace","FW","G.Sh",0.64
+"Crystal Palace","FW","Gls",25
+"Crystal Palace","FW","Int",39
+"Crystal Palace","FW","PK",3
+"Crystal Palace","FW","PenS",0
+"Crystal Palace","FW","Rcd",0
+"Crystal Palace","FW","Saves",0
+"Crystal Palace","FW","Sh",170
+"Crystal Palace","FW","SoT",67
+"Crystal Palace","FW","Tkl",144
+"Crystal Palace","FW","TklW",85
+"Crystal Palace","FW","xG",20.8
+"Everton","FW","Aer.lost",305
+"Everton","FW","Ass",1
+"Everton","FW","Blocks",37
+"Everton","FW","Cha.lost",29
+"Everton","FW","Clr",58
+"Everton","FW","Cmp.",73.7125
+"Everton","FW","Dist",13.26
+"Everton","FW","Err",0
+"Everton","FW","FK",0
+"Everton","FW","G.Sh",0.3
+"Everton","FW","Gls",14
+"Everton","FW","Int",6
+"Everton","FW","PK",1
+"Everton","FW","PenS",0
+"Everton","FW","Rcd",0
+"Everton","FW","Saves",0
+"Everton","FW","Sh",145
+"Everton","FW","SoT",54
+"Everton","FW","Tkl",30
+"Everton","FW","TklW",14
+"Everton","FW","xG",25
+"Fulham","FW","Aer.lost",238
+"Fulham","FW","Ass",0
+"Fulham","FW","Blocks",141
+"Fulham","FW","Cha.lost",104
+"Fulham","FW","Clr",94
+"Fulham","FW","Cmp.",74.6
+"Fulham","FW","Dist",15.3111111111111
+"Fulham","FW","Err",1
+"Fulham","FW","FK",5
+"Fulham","FW","G.Sh",1.11
+"Fulham","FW","Gls",34
+"Fulham","FW","Int",86
+"Fulham","FW","PK",2
+"Fulham","FW","PenS",0
+"Fulham","FW","Rcd",1
+"Fulham","FW","Saves",0
+"Fulham","FW","Sh",261
+"Fulham","FW","SoT",92
+"Fulham","FW","Tkl",184
+"Fulham","FW","TklW",114
+"Fulham","FW","xG",30.9
+"Liverpool","FW","Aer.lost",81
+"Liverpool","FW","Ass",7
+"Liverpool","FW","Blocks",49
+"Liverpool","FW","Cha.lost",45
+"Liverpool","FW","Clr",12
+"Liverpool","FW","Cmp.",82.4166666666667
+"Liverpool","FW","Dist",15
+"Liverpool","FW","Err",0
+"Liverpool","FW","FK",1
+"Liverpool","FW","G.Sh",0.73
+"Liverpool","FW","Gls",51
+"Liverpool","FW","Int",23
+"Liverpool","FW","PK",5
+"Liverpool","FW","PenS",0
+"Liverpool","FW","Rcd",0
+"Liverpool","FW","Saves",0
+"Liverpool","FW","Sh",344
+"Liverpool","FW","SoT",137
+"Liverpool","FW","Tkl",67
+"Liverpool","FW","TklW",41
+"Liverpool","FW","xG",53.6
+"Luton Town","FW","Aer.lost",228
+"Luton Town","FW","Ass",4
+"Luton Town","FW","Blocks",44
+"Luton Town","FW","Cha.lost",24
+"Luton Town","FW","Clr",92
+"Luton Town","FW","Cmp.",69.1333333333333
+"Luton Town","FW","Dist",13
+"Luton Town","FW","Err",0
+"Luton Town","FW","FK",0
+"Luton Town","FW","G.Sh",0.51
+"Luton Town","FW","Gls",19
+"Luton Town","FW","Int",8
+"Luton Town","FW","PK",4
+"Luton Town","FW","PenS",0
+"Luton Town","FW","Rcd",0
+"Luton Town","FW","Saves",0
+"Luton Town","FW","Sh",94
+"Luton Town","FW","SoT",36
+"Luton Town","FW","Tkl",35
+"Luton Town","FW","TklW",19
+"Luton Town","FW","xG",16.1
+"Manchester City","FW","Aer.lost",68
+"Manchester City","FW","Ass",13
+"Manchester City","FW","Blocks",72
+"Manchester City","FW","Cha.lost",38
+"Manchester City","FW","Clr",45
+"Manchester City","FW","Cmp.",83.28
+"Manchester City","FW","Dist",14.74
+"Manchester City","FW","Err",1
+"Manchester City","FW","FK",3
+"Manchester City","FW","G.Sh",0.77
+"Manchester City","FW","Gls",39
+"Manchester City","FW","Int",35
+"Manchester City","FW","PK",3
+"Manchester City","FW","PenS",0
+"Manchester City","FW","Rcd",0
+"Manchester City","FW","Saves",0
+"Manchester City","FW","Sh",248
+"Manchester City","FW","SoT",97
+"Manchester City","FW","Tkl",96
+"Manchester City","FW","TklW",56
+"Manchester City","FW","xG",35.9
+"Manchester Utd","FW","Aer.lost",105
+"Manchester Utd","FW","Ass",1
+"Manchester Utd","FW","Blocks",85
+"Manchester Utd","FW","Cha.lost",78
+"Manchester Utd","FW","Clr",62
+"Manchester Utd","FW","Cmp.",80.1
+"Manchester Utd","FW","Dist",14.6428571428571
+"Manchester Utd","FW","Err",0
+"Manchester Utd","FW","FK",1
+"Manchester Utd","FW","G.Sh",0.59
+"Manchester Utd","FW","Gls",22
+"Manchester Utd","FW","Int",37
+"Manchester Utd","FW","PK",2
+"Manchester Utd","FW","PenS",0
+"Manchester Utd","FW","Rcd",0
+"Manchester Utd","FW","Saves",0
+"Manchester Utd","FW","Sh",204
+"Manchester Utd","FW","SoT",68
+"Manchester Utd","FW","Tkl",103
+"Manchester Utd","FW","TklW",55
+"Manchester Utd","FW","xG",23.9
+"Newcastle Utd","FW","Aer.lost",95
+"Newcastle Utd","FW","Ass",1
+"Newcastle Utd","FW","Blocks",71
+"Newcastle Utd","FW","Cha.lost",69
+"Newcastle Utd","FW","Clr",49
+"Newcastle Utd","FW","Cmp.",64.975
+"Newcastle Utd","FW","Dist",15.4285714285714
+"Newcastle Utd","FW","Err",0
+"Newcastle Utd","FW","FK",0
+"Newcastle Utd","FW","G.Sh",1.1
+"Newcastle Utd","FW","Gls",41
+"Newcastle Utd","FW","Int",27
+"Newcastle Utd","FW","PK",7
+"Newcastle Utd","FW","PenS",0
+"Newcastle Utd","FW","Rcd",0
+"Newcastle Utd","FW","Saves",0
+"Newcastle Utd","FW","Sh",232
+"Newcastle Utd","FW","SoT",95
+"Newcastle Utd","FW","Tkl",96
+"Newcastle Utd","FW","TklW",51
+"Newcastle Utd","FW","xG",39.2
+"Nott'ham Forest","FW","Aer.lost",250
+"Nott'ham Forest","FW","Ass",3
+"Nott'ham Forest","FW","Blocks",81
+"Nott'ham Forest","FW","Cha.lost",58
+"Nott'ham Forest","FW","Clr",71
+"Nott'ham Forest","FW","Cmp.",70.8636363636364
+"Nott'ham Forest","FW","Dist",15.04
+"Nott'ham Forest","FW","Err",2
+"Nott'ham Forest","FW","FK",1
+"Nott'ham Forest","FW","G.Sh",0.98
+"Nott'ham Forest","FW","Gls",28
+"Nott'ham Forest","FW","Int",21
+"Nott'ham Forest","FW","PK",0
+"Nott'ham Forest","FW","PenS",0
+"Nott'ham Forest","FW","Rcd",0
+"Nott'ham Forest","FW","Saves",0
+"Nott'ham Forest","FW","Sh",141
+"Nott'ham Forest","FW","SoT",66
+"Nott'ham Forest","FW","Tkl",96
+"Nott'ham Forest","FW","TklW",49
+"Nott'ham Forest","FW","xG",22.2
+"Sheffield Utd","FW","Aer.lost",310
+"Sheffield Utd","FW","Ass",2
+"Sheffield Utd","FW","Blocks",121
+"Sheffield Utd","FW","Cha.lost",56
+"Sheffield Utd","FW","Clr",95
+"Sheffield Utd","FW","Cmp.",74.1818181818182
+"Sheffield Utd","FW","Dist",15.8166666666667
+"Sheffield Utd","FW","Err",0
+"Sheffield Utd","FW","FK",0
+"Sheffield Utd","FW","G.Sh",0.65
+"Sheffield Utd","FW","Gls",14
+"Sheffield Utd","FW","Int",15
+"Sheffield Utd","FW","PK",2
+"Sheffield Utd","FW","PenS",0
+"Sheffield Utd","FW","Rcd",2
+"Sheffield Utd","FW","Saves",0
+"Sheffield Utd","FW","Sh",93
+"Sheffield Utd","FW","SoT",38
+"Sheffield Utd","FW","Tkl",105
+"Sheffield Utd","FW","TklW",66
+"Sheffield Utd","FW","xG",14.3
+"Tottenham","FW","Aer.lost",133
+"Tottenham","FW","Ass",0
+"Tottenham","FW","Blocks",227
+"Tottenham","FW","Cha.lost",155
+"Tottenham","FW","Clr",88
+"Tottenham","FW","Cmp.",77.9583333333333
+"Tottenham","FW","Dist",13.5875
+"Tottenham","FW","Err",5
+"Tottenham","FW","FK",0
+"Tottenham","FW","G.Sh",1.22
+"Tottenham","FW","Gls",39
+"Tottenham","FW","Int",83
+"Tottenham","FW","PK",1
+"Tottenham","FW","PenS",0
+"Tottenham","FW","Rcd",0
+"Tottenham","FW","Saves",0
+"Tottenham","FW","Sh",248
+"Tottenham","FW","SoT",98
+"Tottenham","FW","Tkl",215
+"Tottenham","FW","TklW",125
+"Tottenham","FW","xG",33.9
+"West Ham","FW","Aer.lost",166
+"West Ham","FW","Ass",2
+"West Ham","FW","Blocks",82
+"West Ham","FW","Cha.lost",60
+"West Ham","FW","Clr",34
+"West Ham","FW","Cmp.",73.75
+"West Ham","FW","Dist",16.2833333333333
+"West Ham","FW","Err",1
+"West Ham","FW","FK",1
+"West Ham","FW","G.Sh",0.7
+"West Ham","FW","Gls",31
+"West Ham","FW","Int",38
+"West Ham","FW","PK",2
+"West Ham","FW","PenS",0
+"West Ham","FW","Rcd",0
+"West Ham","FW","Saves",0
+"West Ham","FW","Sh",205
+"West Ham","FW","SoT",70
+"West Ham","FW","Tkl",128
+"West Ham","FW","TklW",85
+"West Ham","FW","xG",25.4
+"Wolves","FW","Aer.lost",128
+"Wolves","FW","Ass",3
+"Wolves","FW","Blocks",60
+"Wolves","FW","Cha.lost",51
+"Wolves","FW","Clr",42
+"Wolves","FW","Cmp.",76.5
+"Wolves","FW","Dist",14.8666666666667
+"Wolves","FW","Err",1
+"Wolves","FW","FK",2
+"Wolves","FW","G.Sh",0.95
+"Wolves","FW","Gls",23
+"Wolves","FW","Int",30
+"Wolves","FW","PK",2
+"Wolves","FW","PenS",0
+"Wolves","FW","Rcd",0
+"Wolves","FW","Saves",0
+"Wolves","FW","Sh",144
+"Wolves","FW","SoT",60
+"Wolves","FW","Tkl",70
+"Wolves","FW","TklW",34
+"Wolves","FW","xG",20.3
+"Arsenal","GK","Aer.lost",1
+"Arsenal","GK","Ass",0
+"Arsenal","GK","Blocks",0
+"Arsenal","GK","Cha.lost",0
+"Arsenal","GK","Clr",11
+"Arsenal","GK","Cmp.",72.3
+"Arsenal","GK","Dist",0
+"Arsenal","GK","Err",7
+"Arsenal","GK","FK",0
+"Arsenal","GK","G.Sh",0
+"Arsenal","GK","Gls",0
+"Arsenal","GK","Int",0
+"Arsenal","GK","PK",0
+"Arsenal","GK","PenS",0
+"Arsenal","GK","Rcd",0
+"Arsenal","GK","Saves",26
+"Arsenal","GK","Sh",0
+"Arsenal","GK","SoT",0
+"Arsenal","GK","Tkl",1
+"Arsenal","GK","TklW",1
+"Arsenal","GK","xG",0
+"Aston Villa","GK","Aer.lost",0
+"Aston Villa","GK","Ass",0
+"Aston Villa","GK","Blocks",0
+"Aston Villa","GK","Cha.lost",0
+"Aston Villa","GK","Clr",1
+"Aston Villa","GK","Cmp.",81.3
+"Aston Villa","GK","Dist",0
+"Aston Villa","GK","Err",0
+"Aston Villa","GK","FK",0
+"Aston Villa","GK","G.Sh",0
+"Aston Villa","GK","Gls",0
+"Aston Villa","GK","Int",0
+"Aston Villa","GK","PK",0
+"Aston Villa","GK","PenS",0
+"Aston Villa","GK","Rcd",0
+"Aston Villa","GK","Saves",50
+"Aston Villa","GK","Sh",0
+"Aston Villa","GK","SoT",0
+"Aston Villa","GK","Tkl",0
+"Aston Villa","GK","TklW",0
+"Aston Villa","GK","xG",0
+"Bournemouth","GK","Aer.lost",0
+"Bournemouth","GK","Ass",0
+"Bournemouth","GK","Blocks",1
+"Bournemouth","GK","Cha.lost",0
+"Bournemouth","GK","Clr",14
+"Bournemouth","GK","Cmp.",61.05
+"Bournemouth","GK","Dist",0
+"Bournemouth","GK","Err",3
+"Bournemouth","GK","FK",0
+"Bournemouth","GK","G.Sh",0
+"Bournemouth","GK","Gls",0
+"Bournemouth","GK","Int",1
+"Bournemouth","GK","PK",0
+"Bournemouth","GK","PenS",1
+"Bournemouth","GK","Rcd",0
+"Bournemouth","GK","Saves",60
+"Bournemouth","GK","Sh",0
+"Bournemouth","GK","SoT",0
+"Bournemouth","GK","Tkl",0
+"Bournemouth","GK","TklW",0
+"Bournemouth","GK","xG",0
+"Brentford","GK","Aer.lost",1
+"Brentford","GK","Ass",0
+"Brentford","GK","Blocks",1
+"Brentford","GK","Cha.lost",4
+"Brentford","GK","Clr",17
+"Brentford","GK","Cmp.",72.4
+"Brentford","GK","Dist",0
+"Brentford","GK","Err",1
+"Brentford","GK","FK",0
+"Brentford","GK","G.Sh",0
+"Brentford","GK","Gls",0
+"Brentford","GK","Int",0
+"Brentford","GK","PK",0
+"Brentford","GK","PenS",0
+"Brentford","GK","Rcd",0
+"Brentford","GK","Saves",48
+"Brentford","GK","Sh",0
+"Brentford","GK","SoT",0
+"Brentford","GK","Tkl",1
+"Brentford","GK","TklW",1
+"Brentford","GK","xG",0
+"Brighton","GK","Aer.lost",0
+"Brighton","GK","Ass",0
+"Brighton","GK","Blocks",0
+"Brighton","GK","Cha.lost",4
+"Brighton","GK","Clr",19
+"Brighton","GK","Cmp.",86.05
+"Brighton","GK","Dist",0
+"Brighton","GK","Err",4
+"Brighton","GK","FK",0
+"Brighton","GK","G.Sh",0
+"Brighton","GK","Gls",0
+"Brighton","GK","Int",0
+"Brighton","GK","PK",0
+"Brighton","GK","PenS",0
+"Brighton","GK","Rcd",0
+"Brighton","GK","Saves",49
+"Brighton","GK","Sh",0
+"Brighton","GK","SoT",0
+"Brighton","GK","Tkl",1
+"Brighton","GK","TklW",1
+"Brighton","GK","xG",0
+"Burnley","GK","Aer.lost",3
+"Burnley","GK","Ass",0
+"Burnley","GK","Blocks",0
+"Burnley","GK","Cha.lost",0
+"Burnley","GK","Clr",28
+"Burnley","GK","Cmp.",67.3
+"Burnley","GK","Dist",0
+"Burnley","GK","Err",5
+"Burnley","GK","FK",0
+"Burnley","GK","G.Sh",0
+"Burnley","GK","Gls",0
+"Burnley","GK","Int",1
+"Burnley","GK","PK",0
+"Burnley","GK","PenS",0
+"Burnley","GK","Rcd",0
+"Burnley","GK","Saves",69
+"Burnley","GK","Sh",0
+"Burnley","GK","SoT",0
+"Burnley","GK","Tkl",3
+"Burnley","GK","TklW",2
+"Burnley","GK","xG",0
+"Chelsea","GK","Aer.lost",0
+"Chelsea","GK","Ass",0
+"Chelsea","GK","Blocks",0
+"Chelsea","GK","Cha.lost",0
+"Chelsea","GK","Clr",0
+"Chelsea","GK","Cmp.",0
+"Chelsea","GK","Dist",0
+"Chelsea","GK","Err",0
+"Chelsea","GK","FK",0
+"Chelsea","GK","G.Sh",0
+"Chelsea","GK","Gls",0
+"Chelsea","GK","Int",0
+"Chelsea","GK","PK",0
+"Chelsea","GK","PenS",1
+"Chelsea","GK","Rcd",0
+"Chelsea","GK","Saves",58
+"Chelsea","GK","Sh",0
+"Chelsea","GK","SoT",0
+"Chelsea","GK","Tkl",0
+"Chelsea","GK","TklW",0
+"Chelsea","GK","xG",0
+"Crystal Palace","GK","Aer.lost",1
+"Crystal Palace","GK","Ass",0
+"Crystal Palace","GK","Blocks",0
+"Crystal Palace","GK","Cha.lost",1
+"Crystal Palace","GK","Clr",14
+"Crystal Palace","GK","Cmp.",38.3333333333333
+"Crystal Palace","GK","Dist",0
+"Crystal Palace","GK","Err",2
+"Crystal Palace","GK","FK",0
+"Crystal Palace","GK","G.Sh",0
+"Crystal Palace","GK","Gls",0
+"Crystal Palace","GK","Int",1
+"Crystal Palace","GK","PK",0
+"Crystal Palace","GK","PenS",0
+"Crystal Palace","GK","Rcd",0
+"Crystal Palace","GK","Saves",46
+"Crystal Palace","GK","Sh",0
+"Crystal Palace","GK","SoT",0
+"Crystal Palace","GK","Tkl",2
+"Crystal Palace","GK","TklW",1
+"Crystal Palace","GK","xG",0
+"Everton","GK","Aer.lost",0
+"Everton","GK","Ass",0
+"Everton","GK","Blocks",3
+"Everton","GK","Cha.lost",0
+"Everton","GK","Clr",19
+"Everton","GK","Cmp.",62.6
+"Everton","GK","Dist",0
+"Everton","GK","Err",1
+"Everton","GK","FK",0
+"Everton","GK","G.Sh",0
+"Everton","GK","Gls",0
+"Everton","GK","Int",0
+"Everton","GK","PK",0
+"Everton","GK","PenS",0
+"Everton","GK","Rcd",0
+"Everton","GK","Saves",46
+"Everton","GK","Sh",0
+"Everton","GK","SoT",0
+"Everton","GK","Tkl",1
+"Everton","GK","TklW",0
+"Everton","GK","xG",0
+"Fulham","GK","Aer.lost",1
+"Fulham","GK","Ass",0
+"Fulham","GK","Blocks",0
+"Fulham","GK","Cha.lost",0
+"Fulham","GK","Clr",14
+"Fulham","GK","Cmp.",79.3
+"Fulham","GK","Dist",0
+"Fulham","GK","Err",1
+"Fulham","GK","FK",0
+"Fulham","GK","G.Sh",0
+"Fulham","GK","Gls",0
+"Fulham","GK","Int",0
+"Fulham","GK","PK",0
+"Fulham","GK","PenS",0
+"Fulham","GK","Rcd",0
+"Fulham","GK","Saves",73
+"Fulham","GK","Sh",0
+"Fulham","GK","SoT",0
+"Fulham","GK","Tkl",0
+"Fulham","GK","TklW",0
+"Fulham","GK","xG",0
+"Liverpool","GK","Aer.lost",2
+"Liverpool","GK","Ass",0
+"Liverpool","GK","Blocks",0
+"Liverpool","GK","Cha.lost",1
+"Liverpool","GK","Clr",11
+"Liverpool","GK","Cmp.",86.3
+"Liverpool","GK","Dist",0
+"Liverpool","GK","Err",4
+"Liverpool","GK","FK",0
+"Liverpool","GK","G.Sh",0
+"Liverpool","GK","Gls",0
+"Liverpool","GK","Int",0
+"Liverpool","GK","PK",0
+"Liverpool","GK","PenS",0
+"Liverpool","GK","Rcd",0
+"Liverpool","GK","Saves",53
+"Liverpool","GK","Sh",0
+"Liverpool","GK","SoT",0
+"Liverpool","GK","Tkl",0
+"Liverpool","GK","TklW",0
+"Liverpool","GK","xG",0
+"Luton Town","GK","Aer.lost",0
+"Luton Town","GK","Ass",0
+"Luton Town","GK","Blocks",1
+"Luton Town","GK","Cha.lost",4
+"Luton Town","GK","Clr",16
+"Luton Town","GK","Cmp.",62.95
+"Luton Town","GK","Dist",0
+"Luton Town","GK","Err",2
+"Luton Town","GK","FK",0
+"Luton Town","GK","G.Sh",0
+"Luton Town","GK","Gls",0
+"Luton Town","GK","Int",0
+"Luton Town","GK","PK",0
+"Luton Town","GK","PenS",0
+"Luton Town","GK","Rcd",0
+"Luton Town","GK","Saves",64
+"Luton Town","GK","Sh",0
+"Luton Town","GK","SoT",0
+"Luton Town","GK","Tkl",2
+"Luton Town","GK","TklW",1
+"Luton Town","GK","xG",0
+"Manchester City","GK","Aer.lost",0
+"Manchester City","GK","Ass",0
+"Manchester City","GK","Blocks",0
+"Manchester City","GK","Cha.lost",1
+"Manchester City","GK","Clr",12
+"Manchester City","GK","Cmp.",83.7
+"Manchester City","GK","Dist",0
+"Manchester City","GK","Err",2
+"Manchester City","GK","FK",0
+"Manchester City","GK","G.Sh",0
+"Manchester City","GK","Gls",0
+"Manchester City","GK","Int",0
+"Manchester City","GK","PK",0
+"Manchester City","GK","PenS",0
+"Manchester City","GK","Rcd",0
+"Manchester City","GK","Saves",31
+"Manchester City","GK","Sh",0
+"Manchester City","GK","SoT",0
+"Manchester City","GK","Tkl",0
+"Manchester City","GK","TklW",0
+"Manchester City","GK","xG",0
+"Manchester Utd","GK","Aer.lost",0
+"Manchester Utd","GK","Ass",0
+"Manchester Utd","GK","Blocks",0
+"Manchester Utd","GK","Cha.lost",0
+"Manchester Utd","GK","Clr",0
+"Manchester Utd","GK","Cmp.",0
+"Manchester Utd","GK","Dist",0
+"Manchester Utd","GK","Err",0
+"Manchester Utd","GK","FK",0
+"Manchester Utd","GK","G.Sh",0
+"Manchester Utd","GK","Gls",0
+"Manchester Utd","GK","Int",0
+"Manchester Utd","GK","PK",0
+"Manchester Utd","GK","PenS",0
+"Manchester Utd","GK","Rcd",0
+"Manchester Utd","GK","Saves",68
+"Manchester Utd","GK","Sh",0
+"Manchester Utd","GK","SoT",0
+"Manchester Utd","GK","Tkl",0
+"Manchester Utd","GK","TklW",0
+"Manchester Utd","GK","xG",0
+"Newcastle Utd","GK","Aer.lost",1
+"Newcastle Utd","GK","Ass",0
+"Newcastle Utd","GK","Blocks",0
+"Newcastle Utd","GK","Cha.lost",1
+"Newcastle Utd","GK","Clr",8
+"Newcastle Utd","GK","Cmp.",66.85
+"Newcastle Utd","GK","Dist",0
+"Newcastle Utd","GK","Err",2
+"Newcastle Utd","GK","FK",0
+"Newcastle Utd","GK","G.Sh",0
+"Newcastle Utd","GK","Gls",0
+"Newcastle Utd","GK","Int",0
+"Newcastle Utd","GK","PK",0
+"Newcastle Utd","GK","PenS",0
+"Newcastle Utd","GK","Rcd",0
+"Newcastle Utd","GK","Saves",58
+"Newcastle Utd","GK","Sh",0
+"Newcastle Utd","GK","SoT",0
+"Newcastle Utd","GK","Tkl",0
+"Newcastle Utd","GK","TklW",0
+"Newcastle Utd","GK","xG",0
+"Nott'ham Forest","GK","Aer.lost",0
+"Nott'ham Forest","GK","Ass",0
+"Nott'ham Forest","GK","Blocks",0
+"Nott'ham Forest","GK","Cha.lost",1
+"Nott'ham Forest","GK","Clr",20
+"Nott'ham Forest","GK","Cmp.",72.8666666666667
+"Nott'ham Forest","GK","Dist",0
+"Nott'ham Forest","GK","Err",5
+"Nott'ham Forest","GK","FK",0
+"Nott'ham Forest","GK","G.Sh",0
+"Nott'ham Forest","GK","Gls",0
+"Nott'ham Forest","GK","Int",0
+"Nott'ham Forest","GK","PK",0
+"Nott'ham Forest","GK","PenS",0
+"Nott'ham Forest","GK","Rcd",0
+"Nott'ham Forest","GK","Saves",52
+"Nott'ham Forest","GK","Sh",0
+"Nott'ham Forest","GK","SoT",0
+"Nott'ham Forest","GK","Tkl",0
+"Nott'ham Forest","GK","TklW",0
+"Nott'ham Forest","GK","xG",0
+"Sheffield Utd","GK","Aer.lost",1
+"Sheffield Utd","GK","Ass",0
+"Sheffield Utd","GK","Blocks",0
+"Sheffield Utd","GK","Cha.lost",1
+"Sheffield Utd","GK","Clr",18
+"Sheffield Utd","GK","Cmp.",56.5
+"Sheffield Utd","GK","Dist",0
+"Sheffield Utd","GK","Err",6
+"Sheffield Utd","GK","FK",0
+"Sheffield Utd","GK","G.Sh",0
+"Sheffield Utd","GK","Gls",0
+"Sheffield Utd","GK","Int",0
+"Sheffield Utd","GK","PK",0
+"Sheffield Utd","GK","PenS",0
+"Sheffield Utd","GK","Rcd",0
+"Sheffield Utd","GK","Saves",84
+"Sheffield Utd","GK","Sh",0
+"Sheffield Utd","GK","SoT",0
+"Sheffield Utd","GK","Tkl",5
+"Sheffield Utd","GK","TklW",3
+"Sheffield Utd","GK","xG",0
+"Tottenham","GK","Aer.lost",1
+"Tottenham","GK","Ass",0
+"Tottenham","GK","Blocks",0
+"Tottenham","GK","Cha.lost",1
+"Tottenham","GK","Clr",31
+"Tottenham","GK","Cmp.",85.1
+"Tottenham","GK","Dist",0
+"Tottenham","GK","Err",2
+"Tottenham","GK","FK",0
+"Tottenham","GK","G.Sh",0
+"Tottenham","GK","Gls",0
+"Tottenham","GK","Int",1
+"Tottenham","GK","PK",0
+"Tottenham","GK","PenS",0
+"Tottenham","GK","Rcd",0
+"Tottenham","GK","Saves",57
+"Tottenham","GK","Sh",0
+"Tottenham","GK","SoT",0
+"Tottenham","GK","Tkl",0
+"Tottenham","GK","TklW",0
+"Tottenham","GK","xG",0
+"West Ham","GK","Aer.lost",1
+"West Ham","GK","Ass",0
+"West Ham","GK","Blocks",0
+"West Ham","GK","Cha.lost",2
+"West Ham","GK","Clr",16
+"West Ham","GK","Cmp.",64.8
+"West Ham","GK","Dist",0
+"West Ham","GK","Err",0
+"West Ham","GK","FK",0
+"West Ham","GK","G.Sh",0
+"West Ham","GK","Gls",0
+"West Ham","GK","Int",1
+"West Ham","GK","PK",0
+"West Ham","GK","PenS",1
+"West Ham","GK","Rcd",0
+"West Ham","GK","Saves",63
+"West Ham","GK","Sh",0
+"West Ham","GK","SoT",0
+"West Ham","GK","Tkl",1
+"West Ham","GK","TklW",1
+"West Ham","GK","xG",0
+"Wolves","GK","Aer.lost",0
+"Wolves","GK","Ass",0
+"Wolves","GK","Blocks",0
+"Wolves","GK","Cha.lost",1
+"Wolves","GK","Clr",1
+"Wolves","GK","Cmp.",66.7
+"Wolves","GK","Dist",0
+"Wolves","GK","Err",0
+"Wolves","GK","FK",0
+"Wolves","GK","G.Sh",0
+"Wolves","GK","Gls",0
+"Wolves","GK","Int",0
+"Wolves","GK","PK",0
+"Wolves","GK","PenS",0
+"Wolves","GK","Rcd",0
+"Wolves","GK","Saves",57
+"Wolves","GK","Sh",0
+"Wolves","GK","SoT",0
+"Wolves","GK","Tkl",0
+"Wolves","GK","TklW",0
+"Wolves","GK","xG",0
+"Arsenal","MF","Aer.lost",165
+"Arsenal","MF","Ass",22
+"Arsenal","MF","Blocks",92
+"Arsenal","MF","Cha.lost",70
+"Arsenal","MF","Clr",93
+"Arsenal","MF","Cmp.",87.8
+"Arsenal","MF","Dist",18.9333333333333
+"Arsenal","MF","Err",1
+"Arsenal","MF","FK",4
+"Arsenal","MF","G.Sh",0.42
+"Arsenal","MF","Gls",23
+"Arsenal","MF","Int",93
+"Arsenal","MF","PK",4
+"Arsenal","MF","PenS",0
+"Arsenal","MF","Rcd",1
+"Arsenal","MF","Saves",0
+"Arsenal","MF","Sh",162
+"Arsenal","MF","SoT",54
+"Arsenal","MF","Tkl",163
+"Arsenal","MF","TklW",90
+"Arsenal","MF","xG",20.1
+"Aston Villa","MF","Aer.lost",193
+"Aston Villa","MF","Ass",21
+"Aston Villa","MF","Blocks",148
+"Aston Villa","MF","Cha.lost",152
+"Aston Villa","MF","Clr",91
+"Aston Villa","MF","Cmp.",83.8
+"Aston Villa","MF","Dist",18.0333333333333
+"Aston Villa","MF","Err",3
+"Aston Villa","MF","FK",9
+"Aston Villa","MF","G.Sh",1.27
+"Aston Villa","MF","Gls",28
+"Aston Villa","MF","Int",98
+"Aston Villa","MF","PK",4
+"Aston Villa","MF","PenS",0
+"Aston Villa","MF","Rcd",1
+"Aston Villa","MF","Saves",0
+"Aston Villa","MF","Sh",178
+"Aston Villa","MF","SoT",61
+"Aston Villa","MF","Tkl",238
+"Aston Villa","MF","TklW",139
+"Aston Villa","MF","xG",21.2
+"Bournemouth","MF","Aer.lost",141
+"Bournemouth","MF","Ass",10
+"Bournemouth","MF","Blocks",151
+"Bournemouth","MF","Cha.lost",148
+"Bournemouth","MF","Clr",160
+"Bournemouth","MF","Cmp.",76.4
+"Bournemouth","MF","Dist",21.8333333333333
+"Bournemouth","MF","Err",5
+"Bournemouth","MF","FK",11
+"Bournemouth","MF","G.Sh",0.32
+"Bournemouth","MF","Gls",8
+"Bournemouth","MF","Int",164
+"Bournemouth","MF","PK",0
+"Bournemouth","MF","PenS",0
+"Bournemouth","MF","Rcd",1
+"Bournemouth","MF","Saves",0
+"Bournemouth","MF","Sh",121
+"Bournemouth","MF","SoT",40
+"Bournemouth","MF","Tkl",244
+"Bournemouth","MF","TklW",136
+"Bournemouth","MF","xG",9.3
+"Brentford","MF","Aer.lost",87
+"Brentford","MF","Ass",13
+"Brentford","MF","Blocks",136
+"Brentford","MF","Cha.lost",154
+"Brentford","MF","Clr",127
+"Brentford","MF","Cmp.",73.8333333333333
+"Brentford","MF","Dist",16.8571428571429
+"Brentford","MF","Err",5
+"Brentford","MF","FK",4
+"Brentford","MF","G.Sh",0.81
+"Brentford","MF","Gls",6
+"Brentford","MF","Int",102
+"Brentford","MF","PK",0
+"Brentford","MF","PenS",0
+"Brentford","MF","Rcd",0
+"Brentford","MF","Saves",0
+"Brentford","MF","Sh",101
+"Brentford","MF","SoT",35
+"Brentford","MF","Tkl",204
+"Brentford","MF","TklW",126
+"Brentford","MF","xG",10
+"Brighton","MF","Aer.lost",56
+"Brighton","MF","Ass",22
+"Brighton","MF","Blocks",91
+"Brighton","MF","Cha.lost",81
+"Brighton","MF","Clr",68
+"Brighton","MF","Cmp.",85.2857142857143
+"Brighton","MF","Dist",21.0125
+"Brighton","MF","Err",4
+"Brighton","MF","FK",4
+"Brighton","MF","G.Sh",0.16
+"Brighton","MF","Gls",6
+"Brighton","MF","Int",38
+"Brighton","MF","PK",1
+"Brighton","MF","PenS",0
+"Brighton","MF","Rcd",1
+"Brighton","MF","Saves",0
+"Brighton","MF","Sh",144
+"Brighton","MF","SoT",43
+"Brighton","MF","Tkl",113
+"Brighton","MF","TklW",58
+"Brighton","MF","xG",12.1
+"Burnley","MF","Aer.lost",187
+"Burnley","MF","Ass",6
+"Burnley","MF","Blocks",181
+"Burnley","MF","Cha.lost",102
+"Burnley","MF","Clr",174
+"Burnley","MF","Cmp.",75.41
+"Burnley","MF","Dist",19.5111111111111
+"Burnley","MF","Err",4
+"Burnley","MF","FK",10
+"Burnley","MF","G.Sh",0.49
+"Burnley","MF","Gls",13
+"Burnley","MF","Int",89
+"Burnley","MF","PK",1
+"Burnley","MF","PenS",0
+"Burnley","MF","Rcd",1
+"Burnley","MF","Saves",0
+"Burnley","MF","Sh",166
+"Burnley","MF","SoT",48
+"Burnley","MF","Tkl",235
+"Burnley","MF","TklW",148
+"Burnley","MF","xG",12.8
+"Chelsea","MF","Aer.lost",33
+"Chelsea","MF","Ass",19
+"Chelsea","MF","Blocks",57
+"Chelsea","MF","Cha.lost",52
+"Chelsea","MF","Clr",40
+"Chelsea","MF","Cmp.",86.5666666666667
+"Chelsea","MF","Dist",22.1
+"Chelsea","MF","Err",0
+"Chelsea","MF","FK",2
+"Chelsea","MF","G.Sh",0.46
+"Chelsea","MF","Gls",7
+"Chelsea","MF","Int",44
+"Chelsea","MF","PK",1
+"Chelsea","MF","PenS",0
+"Chelsea","MF","Rcd",1
+"Chelsea","MF","Saves",0
+"Chelsea","MF","Sh",95
+"Chelsea","MF","SoT",30
+"Chelsea","MF","Tkl",105
+"Chelsea","MF","TklW",66
+"Chelsea","MF","xG",9.6
+"Crystal Palace","MF","Aer.lost",95
+"Crystal Palace","MF","Ass",8
+"Crystal Palace","MF","Blocks",118
+"Crystal Palace","MF","Cha.lost",95
+"Crystal Palace","MF","Clr",134
+"Crystal Palace","MF","Cmp.",81.1285714285714
+"Crystal Palace","MF","Dist",19.7142857142857
+"Crystal Palace","MF","Err",1
+"Crystal Palace","MF","FK",10
+"Crystal Palace","MF","G.Sh",0.12
+"Crystal Palace","MF","Gls",7
+"Crystal Palace","MF","Int",93
+"Crystal Palace","MF","PK",1
+"Crystal Palace","MF","PenS",0
+"Crystal Palace","MF","Rcd",1
+"Crystal Palace","MF","Saves",0
+"Crystal Palace","MF","Sh",122
+"Crystal Palace","MF","SoT",40
+"Crystal Palace","MF","Tkl",213
+"Crystal Palace","MF","TklW",123
+"Crystal Palace","MF","xG",10.6
+"Everton","MF","Aer.lost",134
+"Everton","MF","Ass",9
+"Everton","MF","Blocks",180
+"Everton","MF","Cha.lost",159
+"Everton","MF","Clr",155
+"Everton","MF","Cmp.",72.6272727272727
+"Everton","MF","Dist",19.1444444444444
+"Everton","MF","Err",1
+"Everton","MF","FK",8
+"Everton","MF","G.Sh",0.7
+"Everton","MF","Gls",12
+"Everton","MF","Int",136
+"Everton","MF","PK",0
+"Everton","MF","PenS",0
+"Everton","MF","Rcd",0
+"Everton","MF","Saves",0
+"Everton","MF","Sh",192
+"Everton","MF","SoT",55
+"Everton","MF","Tkl",331
+"Everton","MF","TklW",186
+"Everton","MF","xG",14.9
+"Fulham","MF","Aer.lost",55
+"Fulham","MF","Ass",20
+"Fulham","MF","Blocks",51
+"Fulham","MF","Cha.lost",61
+"Fulham","MF","Clr",42
+"Fulham","MF","Cmp.",80.325
+"Fulham","MF","Dist",18.4
+"Fulham","MF","Err",0
+"Fulham","MF","FK",6
+"Fulham","MF","G.Sh",0.3
+"Fulham","MF","Gls",7
+"Fulham","MF","Int",28
+"Fulham","MF","PK",0
+"Fulham","MF","PenS",0
+"Fulham","MF","Rcd",0
+"Fulham","MF","Saves",0
+"Fulham","MF","Sh",114
+"Fulham","MF","SoT",35
+"Fulham","MF","Tkl",79
+"Fulham","MF","TklW",47
+"Fulham","MF","xG",8.5
+"Liverpool","MF","Aer.lost",114
+"Liverpool","MF","Ass",18
+"Liverpool","MF","Blocks",202
+"Liverpool","MF","Cha.lost",198
+"Liverpool","MF","Clr",99
+"Liverpool","MF","Cmp.",82.8
+"Liverpool","MF","Dist",22.1
+"Liverpool","MF","Err",5
+"Liverpool","MF","FK",9
+"Liverpool","MF","G.Sh",0.41
+"Liverpool","MF","Gls",11
+"Liverpool","MF","Int",99
+"Liverpool","MF","PK",1
+"Liverpool","MF","PenS",0
+"Liverpool","MF","Rcd",3
+"Liverpool","MF","Saves",0
+"Liverpool","MF","Sh",158
+"Liverpool","MF","SoT",42
+"Liverpool","MF","Tkl",265
+"Liverpool","MF","TklW",147
+"Liverpool","MF","xG",11
+"Luton Town","MF","Aer.lost",200
+"Luton Town","MF","Ass",5
+"Luton Town","MF","Blocks",192
+"Luton Town","MF","Cha.lost",148
+"Luton Town","MF","Clr",187
+"Luton Town","MF","Cmp.",76.5545454545454
+"Luton Town","MF","Dist",17.8555555555556
+"Luton Town","MF","Err",10
+"Luton Town","MF","FK",8
+"Luton Town","MF","G.Sh",0.81
+"Luton Town","MF","Gls",17
+"Luton Town","MF","Int",95
+"Luton Town","MF","PK",0
+"Luton Town","MF","PenS",0
+"Luton Town","MF","Rcd",0
+"Luton Town","MF","Saves",0
+"Luton Town","MF","Sh",198
+"Luton Town","MF","SoT",55
+"Luton Town","MF","Tkl",260
+"Luton Town","MF","TklW",142
+"Luton Town","MF","xG",16.7
+"Manchester City","MF","Aer.lost",95
+"Manchester City","MF","Ass",19
+"Manchester City","MF","Blocks",99
+"Manchester City","MF","Cha.lost",120
+"Manchester City","MF","Clr",100
+"Manchester City","MF","Cmp.",80.9470588235294
+"Manchester City","MF","Dist",19.5666666666667
+"Manchester City","MF","Err",9
+"Manchester City","MF","FK",17
+"Manchester City","MF","G.Sh",0.55
+"Manchester City","MF","Gls",24
+"Manchester City","MF","Int",59
+"Manchester City","MF","PK",1
+"Manchester City","MF","PenS",0
+"Manchester City","MF","Rcd",2
+"Manchester City","MF","Saves",0
+"Manchester City","MF","Sh",211
+"Manchester City","MF","SoT",77
+"Manchester City","MF","Tkl",187
+"Manchester City","MF","TklW",103
+"Manchester City","MF","xG",20.3
+"Manchester Utd","MF","Aer.lost",142
+"Manchester Utd","MF","Ass",8
+"Manchester Utd","MF","Blocks",221
+"Manchester Utd","MF","Cha.lost",195
+"Manchester Utd","MF","Clr",240
+"Manchester Utd","MF","Cmp.",81.55
+"Manchester Utd","MF","Dist",19.9285714285714
+"Manchester Utd","MF","Err",6
+"Manchester Utd","MF","FK",13
+"Manchester Utd","MF","G.Sh",1.93
+"Manchester Utd","MF","Gls",19
+"Manchester Utd","MF","Int",99
+"Manchester Utd","MF","PK",2
+"Manchester Utd","MF","PenS",0
+"Manchester Utd","MF","Rcd",0
+"Manchester Utd","MF","Saves",0
+"Manchester Utd","MF","Sh",163
+"Manchester Utd","MF","SoT",62
+"Manchester Utd","MF","Tkl",317
+"Manchester Utd","MF","TklW",192
+"Manchester Utd","MF","xG",17.1
+"Newcastle Utd","MF","Aer.lost",80
+"Newcastle Utd","MF","Ass",18
+"Newcastle Utd","MF","Blocks",119
+"Newcastle Utd","MF","Cha.lost",107
+"Newcastle Utd","MF","Clr",80
+"Newcastle Utd","MF","Cmp.",85.875
+"Newcastle Utd","MF","Dist",15.2714285714286
+"Newcastle Utd","MF","Err",3
+"Newcastle Utd","MF","FK",0
+"Newcastle Utd","MF","G.Sh",0.92
+"Newcastle Utd","MF","Gls",13
+"Newcastle Utd","MF","Int",55
+"Newcastle Utd","MF","PK",0
+"Newcastle Utd","MF","PenS",0
+"Newcastle Utd","MF","Rcd",0
+"Newcastle Utd","MF","Saves",0
+"Newcastle Utd","MF","Sh",113
+"Newcastle Utd","MF","SoT",37
+"Newcastle Utd","MF","Tkl",171
+"Newcastle Utd","MF","TklW",111
+"Newcastle Utd","MF","xG",13.4
+"Nott'ham Forest","MF","Aer.lost",118
+"Nott'ham Forest","MF","Ass",9
+"Nott'ham Forest","MF","Blocks",120
+"Nott'ham Forest","MF","Cha.lost",75
+"Nott'ham Forest","MF","Clr",139
+"Nott'ham Forest","MF","Cmp.",81.85
+"Nott'ham Forest","MF","Dist",19.8571428571429
+"Nott'ham Forest","MF","Err",1
+"Nott'ham Forest","MF","FK",3
+"Nott'ham Forest","MF","G.Sh",0.31
+"Nott'ham Forest","MF","Gls",8
+"Nott'ham Forest","MF","Int",100
+"Nott'ham Forest","MF","PK",1
+"Nott'ham Forest","MF","PenS",0
+"Nott'ham Forest","MF","Rcd",0
+"Nott'ham Forest","MF","Saves",0
+"Nott'ham Forest","MF","Sh",132
+"Nott'ham Forest","MF","SoT",29
+"Nott'ham Forest","MF","Tkl",165
+"Nott'ham Forest","MF","TklW",94
+"Nott'ham Forest","MF","xG",11
+"Sheffield Utd","MF","Aer.lost",158
+"Sheffield Utd","MF","Ass",4
+"Sheffield Utd","MF","Blocks",193
+"Sheffield Utd","MF","Cha.lost",176
+"Sheffield Utd","MF","Clr",228
+"Sheffield Utd","MF","Cmp.",74.2090909090909
+"Sheffield Utd","MF","Dist",21.025
+"Sheffield Utd","MF","Err",2
+"Sheffield Utd","MF","FK",6
+"Sheffield Utd","MF","G.Sh",0.27
+"Sheffield Utd","MF","Gls",8
+"Sheffield Utd","MF","Int",141
+"Sheffield Utd","MF","PK",2
+"Sheffield Utd","MF","PenS",0
+"Sheffield Utd","MF","Rcd",0
+"Sheffield Utd","MF","Saves",0
+"Sheffield Utd","MF","Sh",100
+"Sheffield Utd","MF","SoT",31
+"Sheffield Utd","MF","Tkl",336
+"Sheffield Utd","MF","TklW",203
+"Sheffield Utd","MF","xG",8.1
+"Tottenham","MF","Aer.lost",85
+"Tottenham","MF","Ass",23
+"Tottenham","MF","Blocks",95
+"Tottenham","MF","Cha.lost",81
+"Tottenham","MF","Clr",109
+"Tottenham","MF","Cmp.",86.4285714285714
+"Tottenham","MF","Dist",19.6857142857143
+"Tottenham","MF","Err",6
+"Tottenham","MF","FK",5
+"Tottenham","MF","G.Sh",0.47
+"Tottenham","MF","Gls",10
+"Tottenham","MF","Int",106
+"Tottenham","MF","PK",0
+"Tottenham","MF","PenS",0
+"Tottenham","MF","Rcd",2
+"Tottenham","MF","Saves",0
+"Tottenham","MF","Sh",139
+"Tottenham","MF","SoT",49
+"Tottenham","MF","Tkl",210
+"Tottenham","MF","TklW",135
+"Tottenham","MF","xG",11.6
+"West Ham","MF","Aer.lost",46
+"West Ham","MF","Ass",17
+"West Ham","MF","Blocks",57
+"West Ham","MF","Cha.lost",57
+"West Ham","MF","Clr",65
+"West Ham","MF","Cmp.",81.1857142857143
+"West Ham","MF","Dist",18.7333333333333
+"West Ham","MF","Err",4
+"West Ham","MF","FK",13
+"West Ham","MF","G.Sh",0.58
+"West Ham","MF","Gls",14
+"West Ham","MF","Int",62
+"West Ham","MF","PK",2
+"West Ham","MF","PenS",0
+"West Ham","MF","Rcd",0
+"West Ham","MF","Saves",0
+"West Ham","MF","Sh",105
+"West Ham","MF","SoT",34
+"West Ham","MF","Tkl",102
+"West Ham","MF","TklW",61
+"West Ham","MF","xG",14.2
+"Wolves","MF","Aer.lost",113
+"Wolves","MF","Ass",16
+"Wolves","MF","Blocks",93
+"Wolves","MF","Cha.lost",81
+"Wolves","MF","Clr",109
+"Wolves","MF","Cmp.",82.85
+"Wolves","MF","Dist",21.2166666666667
+"Wolves","MF","Err",0
+"Wolves","MF","FK",9
+"Wolves","MF","G.Sh",0.39
+"Wolves","MF","Gls",12
+"Wolves","MF","Int",96
+"Wolves","MF","PK",2
+"Wolves","MF","PenS",0
+"Wolves","MF","Rcd",2
+"Wolves","MF","Saves",0
+"Wolves","MF","Sh",133
+"Wolves","MF","SoT",44
+"Wolves","MF","Tkl",172
+"Wolves","MF","TklW",101
+"Wolves","MF","xG",12.8
