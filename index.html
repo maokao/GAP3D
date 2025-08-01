@@ -7556,6 +7556,12 @@ console.log("last row: "+rows[rows.length - 1]);
             height: 100%; /* 佔滿浮動視窗的高度 */
         }
 
+        .button-container {
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px; /* 按鈕之間的間距，可自行調整 */
+        }
+
         #dataProcessingPanel {
             width: 600px; /* 根據需要調整寬度 */
             height: 650px; /* 根據需要調整高度 */
@@ -7563,6 +7569,14 @@ console.log("last row: "+rows[rows.length - 1]);
             text-align: center;
             border-radius: 5px; /* 加入圓角，根據需要調整圓角大小 */
             overflow: auto; /* 允許內容超出時新增捲軸 */
+        }
+
+        .dataPreviewTable-container {
+          width: 100%;
+          box-sizing: border-box;
+          overflow-x: auto;     /* ✅ 加這行可以橫向捲動 */
+          overflow-y: hidden;
+          white-space: nowrap;  /* 可選：避免內容自動換行 */
         }
 
         #dataPreviewTable {
@@ -7690,8 +7704,8 @@ console.log("last row: "+rows[rows.length - 1]);
             border-radius: 5px;
             width: 50px; /* Width of the button */
             height: 40px; /* Height of the button */
-            position: absolute;
-            right: 95px;;
+            /*position: absolute;
+            right: 95px; */
         }
 
         /* Specific styles for the OK button */
@@ -7704,8 +7718,8 @@ console.log("last row: "+rows[rows.length - 1]);
             border-radius: 5px;
             width: 70px; /* Width of the button */
             height: 40px; /* Height of the button */
-            position: absolute;
-            right: 20px;
+            /*position: absolute;
+            right: 20px; */
         }
 
         .grid-container {
@@ -8469,13 +8483,16 @@ console.log("last row: "+rows[rows.length - 1]);
                     </div>
                                 
                     <!-- 資料預覽的表格 -->
-                    <table id="dataPreviewTable">
-                        <thead id="dataPreviewHead"></thead>
-                        <tbody id="dataPreviewBody"></tbody>
-                    </table>
-
-                    <button id="okButton">OK</button>
-                    <button id="cancelButton">Cancel</button>
+                    <div class="dataPreviewTable-container">
+                        <table id="dataPreviewTable">
+                            <thead id="dataPreviewHead"></thead>
+                            <tbody id="dataPreviewBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="button-container">
+                        <button id="okButton">OK</button>
+                        <button id="cancelButton">Cancel</button>
+                    </div>
                 </div>
             </li>
             <!-- End data information -->
