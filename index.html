@@ -5650,9 +5650,11 @@
                         let rowData = {};
                         if (prefixField) {
                             rowData[prefixField] = row[prefixField]; // 加入前置欄位的資料
+                            //console.log(prefixField+": "+row[prefixField]);
                         }
                         columns.forEach(columnName => {
                             rowData[columnName] = row[columnName]; // 保持原始資料
+                            //console.log(columnName+": "+row[columnName]);
                         });
 
                         // 使用 JSON.stringify 將每個 rowData 轉換為字符串來確保唯一性
@@ -5670,6 +5672,7 @@
                             let tmpArray = [];
                             columns.forEach(columnName => {
                                 tmpArray.push(Number(selectedData[`select${i}`][j][columnName]));
+                                //console.log(i+","+j+","+columnName+": "+Number(selectedData[`select${i}`][j][columnName]));
                             });
                             xc.push(tmpArray);
                         }
@@ -5961,8 +5964,8 @@
 
         // 解析 CSV 檔案
         function parseCSV(csv) {
-            const rows = csv.split('\n').map(row => row.split(',')); // 按 row 解析
-
+            const rows = csv.split('\n').filter(row => row.trim() !== '').map(row => row.split(',')); // 按 row 解析
+console.log("last row: "+rows[rows.length - 1]);
             // 去掉欄位名中的引號，並修剪空白字符
             const headers = rows[0].map(header => header.replace(/['"]+/g, '').trim()); // 取得欄位名
 
@@ -5992,7 +5995,10 @@
                 Papa.parse(csvData, {
                     header: true,
                     complete: function(results) {
-                        parsedData = results.data;
+                        //parsedData = results.data;
+                        parsedData = results.data.filter(row => {
+                            return Object.values(row).some(val => val && val.trim && val.trim() !== "");
+                        });
                         // console.log(parsedData);
                         if (parsedData.length === 0) return; // 沒有資料時直接返回
 
