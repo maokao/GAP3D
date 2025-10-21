@@ -25,7 +25,7 @@
 
     <!-- Favicon -->
     <!-- <link rel="Shortcut Icon" type="image/x-icon" href="img/gap.ico"/> -->
-    <link rel="Shortcut Icon" type="image/x-icon" href="img/cube.png"/> <!-- cube3.ico cube4.png -->
+    <link rel="Shortcut Icon" type="image/x-icon" href="img/cubebar.png"/> <!-- cube.png -->
 
     <!-- awesome icon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -5458,7 +5458,7 @@
                 }
             });
 
-            let highlightIndex = 0; // 記錄從哪一列開始 highlight
+            let highlightIndex = 0; // 記錄從哪一行開始 highlight
 
             for (let i = 1; i <= 6; i++) {
                 const selectValue = parseInt(document.getElementById(`select${i}`).value, 10);
@@ -5477,12 +5477,14 @@
                     // 蒐集選取的 column 名
                     logSelectedColumnNames(highlightIndex, selectValue, i);
                     // console.log(selectedColumns[`select${i}`]); // selectedColumns.select1
+                } else {
+                    selectedColumns[`select${i}`] = []; // 0 就清空，避免殘值
                 }
                 highlightIndex += selectValue; // 更新下一個 highlight column 的起始索引
             }
         }
 
-        // 定義一個物件來儲存每個 Select 的 columnNames (1: Xd、2: Xc、3: Yd、4: Yc、5: Zd、6: Zc)
+        // 儲存每個 Select 的 columnNames (1: Xd、2: Xc、3: Yd、4: Yc、5: Zd、6: Zc)
         let selectedColumns = {
             select1: [],
             select2: [],
@@ -5505,10 +5507,10 @@
             selectedColumns[`select${selectNumber}`] = columnNames;
 
             // 列印選取的 column 名
-            // console.log(`Select${selectNumber} selected columns:`, columnNames.join(", "));
+            console.log(`Select${selectNumber} selected columns:`, columnNames.join(", "));
         }
 
-        // 這個物件將用來存儲對應的資料
+        // 存儲對應的資料
         let selectedData = {
             select1: [],
             select2: [],
@@ -5716,8 +5718,8 @@
                 }
             }
             // 列印 selectedData 和 categoryMapping 來檢查結果
-            // console.log('Re-coded Selected Data:', selectedData);
-            // console.log('Category Mapping:', categoryMapping);
+            console.log('Re-coded Selected Data:', selectedData);
+            console.log('Category Mapping:', categoryMapping);
         }
 
         // 選擇 Example Data or Import Data 的 radio
@@ -5860,14 +5862,71 @@
                     const headers = parsedData.headers; // 取得 CSV 檔案的欄位名
                     const dataRows = parsedData.data; // 取得 CSV 檔案的數值
 
-                    // 前三個欄位為 selectedFields，第四個欄位為 selectedValueField
-                    var defaultDataselectedFields = [
-                        [headers[0]],
-                        [headers[1]],
-                        [headers[2]],
-                    ];
-                    var defaultDataselectedValueField = headers[3];
+                    if (defaultDataselectedOption === 'airpollution') {
+                        // 第三至五個欄位為 selectedFields，第六個欄位為 selectedValueField
+                        var defaultDataselectedFields = [
+                            [headers[2]],
+                            [headers[3]],
+                            [headers[4]],
+                        ];
+                        var defaultDataselectedValueField = headers[5];
 
+                        // 取索引 (headers)
+                        const latIdx  = headers.indexOf('Latitude');
+                        const lonIdx  = headers.indexOf('Longitude');
+                        const stateIdx = headers.indexOf('State');
+
+                        // 清空本次 select2 相關容器
+                        selectedData = selectedData || {};
+                        selectedData.select2 = [];
+                        xc = [];
+                        xc_name = [];
+                        xc_num = 0;
+
+                        // 轉數值 + 清理字串
+                        const rows = dataRows.map(r => ({
+                        State: (r.State ?? '').toString().trim(),
+                        Latitude: parseFloat((r.Latitude ?? '').toString().trim()),
+                        Longitude: parseFloat((r.Longitude ?? '').toString().trim()),
+                        })).filter(r => r.State && !Number.isNaN(r.Latitude) && !Number.isNaN(r.Longitude));
+
+                        // 依 State 去重 (保留第一筆)
+                        const seen = new Set();
+                        const uniqueByState = [];
+                        for (const r of rows) {
+                        if (seen.has(r.State)) continue;
+                        seen.add(r.State);
+                        uniqueByState.push(r);
+                        }
+
+                        // 寫入 selectedColumns 和 selectedData
+                        window.selectedColumns = window.selectedColumns || {};
+                        window.selectedData = window.selectedData || { select1: [], select2: [], select3: [], select4: [], select5: [], select6: [] };
+
+                        selectedColumns.select2 = ['Latitude', 'Longitude'];
+                        selectedData.select2 = uniqueByState;
+
+                        // Xc 的數值矩陣與欄名
+                        const xcCols = ['Latitude', 'Longitude'];
+                        xc = selectedData.select2.map(row => xcCols.map(c => Number(row[c])));
+                        xc_name = xcCols.slice(); // ['Latitude','Longitude']
+                        xc_num  = xcCols.length; // 2
+
+                        // console.log('xc_num:', xc_num);
+                        // console.log('xc_name:', xc_name);
+                        // console.log('xc[0]:', xc[0]);
+                        // console.log('select2:', selectedData.select2);
+                        // console.log('Row count:', selectedData.select2.length);
+                    } else if (defaultDataselectedOption === 'premierleague') {
+                        // 前三個欄位為 selectedFields，第四個欄位為 selectedValueField
+                        var defaultDataselectedFields = [
+                            [headers[0]],
+                            [headers[1]],
+                            [headers[2]],
+                        ];
+                        var defaultDataselectedValueField = headers[3];
+                    }
+                    
                     globalvaluedfields = defaultDataselectedValueField; // for tooltip
 
                     // console.log(defaultDataselectedFields);
@@ -5965,7 +6024,7 @@
         // 解析 CSV 檔案
         function parseCSV(csv) {
             const rows = csv.split('\n').filter(row => row.trim() !== '').map(row => row.split(',')); // 按 row 解析
-console.log("last row: "+rows[rows.length - 1]);
+// console.log("last row: "+rows[rows.length - 1]);
             // 去掉欄位名中的引號，並修剪空白字符
             const headers = rows[0].map(header => header.replace(/['"]+/g, '').trim()); // 取得欄位名
 
@@ -8156,7 +8215,7 @@ console.log("last row: "+rows[rows.length - 1]);
             <!-- Logo For Desktop View -->
             <a class="navbar-brand navbar-brand-desktop" href="index.html">
                 <!-- <img class="side-nav-show-on-closed" src="img/gap.gif"> -->
-                <img class="side-nav-show-on-closed" src="img/cube.png"> <!-- cube3.ico cube4.png -->
+                <img class="side-nav-show-on-closed" src="img/cubebar.png"> <!-- cube.png -->
                 <div class="side-nav-hide-on-closed">GAP3D Online <sup>BETA</sup></div>
             </a>
             <!-- End Logo For Desktop View -->
@@ -8521,8 +8580,8 @@ console.log("last row: "+rows[rows.length - 1]);
                                 <label for="defaultdata">Example Data</label>
                                 <br>
                                 <select id="defaultdataselest">
-                                    <option value="airpollution" selected>2023 Air Pollution in Taiwan</option>
-                                    <option value="premierleague">23/24 Premier League</option>
+                                    <option value="airpollution" selected>U.S. Air Pollut. (2023)</option>
+                                    <option value="premierleague">Premier League (23/24)</option>
                                 </select>
                                 <br>
                                 <!-- 輸入資料 -->
