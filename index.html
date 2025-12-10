@@ -128,6 +128,11 @@
         var Zindices = []; // 用於儲存軸標籤當前 Z 軸 index 的 array
 
         var displayCondition;
+        var displayConditionforban;
+
+        // var sedimentXforban;
+        // var sedimentYforban;
+        // var sedimentZforban;
 
         var cellWidth = 24;
 
@@ -230,6 +235,15 @@
         var now_Yflip_side = "";
         var now_Zflip_side = "";
 
+        // 沉澱圖
+        var Xsedisplay = "";
+        var Ysedisplay = "";
+        var Zsedisplay = "";
+
+        var Xsediorder = null;
+        var Ysediorder = null;
+        var Zsediorder = null;
+
         var SliceRange;
 
         var pancheck;
@@ -296,7 +310,9 @@
                     globalSliderMaxforcolor = ui.values[1];
                     
                     // 每次滑動時更新顏色
-                    updateCubeColorsBasedOnSlider(globalSliderMinforcolor, globalSliderMaxforcolor);
+                    if (!Xsediorder && !Ysediorder && !Zsediorder) {
+                        updateCubeColorsBasedOnSlider(globalSliderMinforcolor, globalSliderMaxforcolor);
+                    }
 
                     transferPositionsToDatatable();
 
@@ -306,13 +322,13 @@
             });
         });
 
+        // for 禁止使用 and 禁止標誌
+        displayConditionforban = document.getElementById('DisplayCondition');
+
         // 根據滑動條的值更新立方體顏色
         function updateCubeColorsBasedOnSlider(sliderMin, sliderMax) {
             // 重置 DisplayCondition 下拉式選單回到預設選項 (Range: Cube)
             displayCondition = document.getElementById('DisplayCondition').selectedIndex = 0;
-
-            // for 禁止使用 and 禁止標誌
-            var displayConditionforban = document.getElementById('DisplayCondition');
 
             if (sliderMin != globalMin || sliderMax != globalMax) {
                 // 禁止使用 displayCondition 並顯示禁止標誌
@@ -1253,7 +1269,7 @@
         });
 
         // 更改 X 軸排序
-        function updateXOrder() {           
+        function updateXOrder() {
             var XsortOrder = now_sortXOrderSelect;
             var row_number = numX;
             var col_number = numY;
@@ -1568,6 +1584,256 @@
             return Zindices;
         }
 
+        // // for 禁止使用 and 禁止標誌
+        // sedimentXforban = document.getElementById('sedimentX');
+        // sedimentYforban = document.getElementById('sedimentY');
+        // sedimentZforban = document.getElementById('sedimentZ');
+        
+        // // 為 X 方向沉澱下拉式選單新增事件監聽器
+        // document.getElementById('sedimentX').addEventListener('change', function() {
+        //     Xsedisplay = this.value;
+
+        //     if (Xsedisplay !== 'null') {
+        //         // 禁止使用 Display condition
+        //         displayConditionforban.querySelector('option[value="RangeY"]').disabled = true;
+        //         displayConditionforban.querySelector('option[value="RangeZ"]').disabled = true;
+        //     } else {
+        //         // 恢復使用 Display condition
+        //         displayConditionforban.querySelector('option[value="RangeY"]').disabled = false;
+        //         displayConditionforban.querySelector('option[value="RangeZ"]').disabled = false;
+        //     }
+            
+        //     sedimentdisplayX(Xsedisplay);
+
+        //     applyChangesBasedOnNewIndices(globalvaluedfields);
+        // });
+
+        // // X 方向沉澱
+        // function sedimentdisplayX(Xsedisplay) {
+        //     if (Xsedisplay !== "null") {
+        //         // 禁止使用 Y, Z 軸方向沉澱，並顯示禁止標誌
+        //         sedimentYforban.disabled = true;
+        //         sedimentYforban.style.cursor = 'not-allowed';
+
+        //         sedimentZforban.disabled = true;
+        //         sedimentZforban.style.cursor = 'not-allowed';
+        //     } else {
+        //         // 恢復使用 Y, Z 軸方向沉澱，並顯示正常標誌
+        //         sedimentYforban.disabled = false;
+        //         sedimentYforban.style.cursor = 'auto';
+
+        //         sedimentZforban.disabled = false;
+        //         sedimentZforban.style.cursor = 'auto';
+
+        //         // 預設為不做任何處理
+        //         Xsediorder = null; // 清空 Xsediorder
+        //         return;
+        //     }
+
+        //     Xsediorder = Array.from({ length: uniqueY.length }, () =>
+        //         Array.from({ length: uniqueZ.length }, () => [])
+        //     );
+
+        //     for (let y = 0; y < uniqueY.length; y++) {
+        //         for (let z = 0; z < uniqueZ.length; z++) {
+
+        //             // 收集 X 值
+        //             const allX = uniqueX.map((_, x) => ({
+        //                 x,
+        //                 v: data_array[x][y][z]
+        //             }));
+
+        //             // 拆成有效值 / 缺失值
+        //             const present = allX.filter(d => d.v !== null && !Number.isNaN(d.v));
+        //             const missing = allX.filter(d => d.v === null || Number.isNaN(d.v));
+
+        //             // 排序（小 → 大／大 → 小）
+        //             present.sort((a, b) => {
+        //                 if (a.v === b.v) return a.x - b.x; // 同分用原始 x 當第二鍵
+        //                 return Xsedisplay === "leftward" ? (b.v - a.v) : (a.v - b.v);
+        //             });
+
+        //             // 有效值、缺失值位置
+        //             if (Xsedisplay == "leftward") {
+        //                 Xsediorder[y][z] = [
+        //                 ...present.map(d => d.x),
+        //                 ...missing.map(d => d.x)
+        //                 ];
+        //             } else {
+        //                 Xsediorder[y][z] = [
+        //                 ...missing.map(d => d.x),
+        //                 ...present.map(d => d.x),
+        //             ];
+        //             }
+        //         }
+        //     }
+        //     // console.log("Xsediorder 已更新：", Xsediorder);
+        // }
+
+        // // 為 Y 方向沉澱下拉式選單新增事件監聽器
+        // document.getElementById('sedimentY').addEventListener('change', function() {
+        //     Ysedisplay = this.value;
+
+        //     if (Ysedisplay !== 'null') {
+        //         // 禁止使用 Display condition
+        //         displayConditionforban.querySelector('option[value="RangeX"]').disabled = true;
+        //         displayConditionforban.querySelector('option[value="RangeZ"]').disabled = true;
+        //     } else {
+        //         // 恢復使用 Display condition
+        //         displayConditionforban.querySelector('option[value="RangeX"]').disabled = false;
+        //         displayConditionforban.querySelector('option[value="RangeZ"]').disabled = false;
+        //     }
+
+        //     sedimentdisplayY(Ysedisplay);
+
+        //     applyChangesBasedOnNewIndices(globalvaluedfields);
+        // });
+
+        // // Y 方向沉澱
+        // function sedimentdisplayY(Ysedisplay) {
+        //     if (Ysedisplay !== "null") {
+        //         // 禁止使用 X, Z 軸方向沉澱，並顯示禁止標誌
+        //         sedimentXforban.disabled = true;
+        //         sedimentXforban.style.cursor = 'not-allowed';
+
+        //         sedimentZforban.disabled = true;
+        //         sedimentZforban.style.cursor = 'not-allowed';
+        //     } else {
+        //         // 恢復使用 X, Z 軸方向沉澱，並顯示正常標誌
+        //         sedimentXforban.disabled = false;
+        //         sedimentXforban.style.cursor = 'auto';
+
+        //         sedimentZforban.disabled = false;
+        //         sedimentZforban.style.cursor = 'auto';
+
+        //         // 預設為不做任何處理
+        //         Ysediorder = null; // 清空 Ysediorder
+        //         return;
+        //     }
+
+        //     Ysediorder = Array.from({ length: uniqueX.length }, () =>
+        //         Array.from({ length: uniqueZ.length }, () => [])
+        //     );
+
+        //     for (let x = 0; x < uniqueX.length; x++) {
+        //         for (let z = 0; z < uniqueZ.length; z++) {
+
+        //             // 收集 Y 值
+        //             const allY = uniqueY.map((_, y) => ({
+        //                 y,
+        //                 v: data_array[x][y][z]
+        //             }));
+
+        //             // 拆成有效值 / 缺失值
+        //             const present = allY.filter(d => d.v !== null && !Number.isNaN(d.v));
+        //             const missing = allY.filter(d => d.v === null || Number.isNaN(d.v));
+
+        //             // 排序（小 → 大／大 → 小）
+        //             present.sort((a, b) => {
+        //                 if (a.v === b.v) return a.y - b.y; // 同分用原始 y 當第二鍵
+        //                 return Ysedisplay === "downward" ? (b.v - a.v) : (a.v - b.v);
+        //             });
+
+        //             // 有效值、缺失值位置
+        //             if (Ysedisplay == "downward") {
+        //                 Ysediorder[x][z] = [
+        //                 ...present.map(d => d.y),
+        //                 ...missing.map(d => d.y)
+        //                 ];
+        //             } else {
+        //                 Ysediorder[x][z] = [
+        //                 ...missing.map(d => d.y),
+        //                 ...present.map(d => d.y),
+        //                 ];
+        //             }
+                    
+        //         }
+        //     }
+        //     // console.log("Ysediorder 已更新：", Ysediorder);
+        // }
+
+        // // 為 Z 方向沉澱下拉式選單新增事件監聽器
+        // document.getElementById('sedimentZ').addEventListener('change', function() {
+        //     Zsedisplay = this.value;
+
+        //     if (Zsedisplay !== 'null') {
+        //         // 禁止使用 Display condition
+        //         displayConditionforban.querySelector('option[value="RangeX"]').disabled = true;
+        //         displayConditionforban.querySelector('option[value="RangeY"]').disabled = true;
+        //     } else {
+        //         // 恢復使用 Display condition
+        //         displayConditionforban.querySelector('option[value="RangeX"]').disabled = false;
+        //         displayConditionforban.querySelector('option[value="RangeY"]').disabled = false;
+        //     }
+
+        //     sedimentdisplayZ(Zsedisplay);
+
+        //     applyChangesBasedOnNewIndices(globalvaluedfields);
+        // });
+
+        // // Z 方向沉澱
+        // function sedimentdisplayZ(Zsedisplay) {
+        //     if (Zsedisplay !== "null") {
+        //         // 禁止使用 X, Y 軸方向沉澱，並顯示禁止標誌
+        //         sedimentXforban.disabled = true;
+        //         sedimentXforban.style.cursor = 'not-allowed';
+
+        //         sedimentYforban.disabled = true;
+        //         sedimentYforban.style.cursor = 'not-allowed';
+        //     } else {
+        //         // 恢復使用 X, Y 軸方向沉澱，並顯示正常標誌
+        //         sedimentXforban.disabled = false;
+        //         sedimentXforban.style.cursor = 'auto';
+
+        //         sedimentYforban.disabled = false;
+        //         sedimentYforban.style.cursor = 'auto';
+
+        //         // 預設為不做任何處理
+        //         Zsediorder = null; // 清空 Zsediorder
+        //         return;
+        //     }
+
+        //     Zsediorder = Array.from({ length: uniqueX.length }, () =>
+        //         Array.from({ length: uniqueY.length }, () => [])
+        //     );
+
+        //     for (let x = 0; x < uniqueX.length; x++) {
+        //         for (let y = 0; y < uniqueY.length; y++) {
+
+        //             // 收集 Z 值
+        //             const allZ = uniqueZ.map((_, z) => ({
+        //                 z,
+        //                 v: data_array[x][y][z]
+        //             }));
+
+        //             // 拆成有效值 / 缺失值
+        //             const present = allZ.filter(d => d.v !== null && !Number.isNaN(d.v));
+        //             const missing = allZ.filter(d => d.v === null || Number.isNaN(d.v));
+
+        //             // 排序（小 → 大／大 → 小）
+        //             present.sort((a, b) => {
+        //                 if (a.v === b.v) return a.z - b.z; // 同分用原始 z 當第二鍵
+        //                 return Zsedisplay === "rightward" ? (b.v - a.v) : (a.v - b.v);
+        //             });
+
+        //             // 有效值、缺失值位置
+        //             if (Zsedisplay == "rightward") {
+        //                 Zsediorder[x][y] = [
+        //                 ...present.map(d => d.z),
+        //                 ...missing.map(d => d.z)
+        //                 ];
+        //             } else {
+        //                 Zsediorder[x][y] = [
+        //                 ...missing.map(d => d.z),
+        //                 ...present.map(d => d.z)
+        //             ];
+        //             }
+                    
+        //         }
+        //     }
+        //     // console.log("Zsediorder 已更新：", Zsediorder);
+        // }
+
         // 依據更新後的 indices 重新映射 cube 之顏色
         function applyChangesBasedOnNewIndices(fieldvalue) {
             cubeSizeX = parseFloat(document.getElementById('cubeSizeX').value);
@@ -1584,14 +1850,92 @@
             currentCubeColors.length = 0;
 
             if (displayCondition === 'RangeX') {
-                for (let i = 0; i < Xindices.length; i++) {
-                    let uniqueValue = uniqueX[Xindices[i]]; // 取得目前 uniqueX 類別的值
-                    let minMax = minMaxByUniqueX[uniqueValue]; // 取得這個類別的最小值和最大值
-
+                if (Xsediorder) {
                     for (let j = 0; j < Yindices.length; j++) {
                         for (let k = 0; k < Zindices.length; k++) {
-                            let cube = cubes[i][j][k]; // 取得現有的立方體
-                            if (cube) {
+
+                            let cubeLineHasValue = false; // (Y, Z) Line
+
+                            let baseY = Yindices[j];
+                            let baseZ = Zindices[k];
+
+                            // the order of X in each (Y, Z) Line after sediment
+                            const lineXs = (Xsediorder[baseY] && Xsediorder[baseY][baseZ])
+                                ? Xsediorder[baseY][baseZ]
+                                : [];
+
+                            // local min/max of each (Y, Z) Line
+                            const lineValues = [];
+                            for (let idx = 0; idx < lineXs.length; idx++) {
+                                const xIdx = lineXs[idx];
+                                const v = data_array[xIdx][baseY][baseZ];
+                                if (v !== null && !Number.isNaN(v)) {
+                                    lineValues.push(v);
+                                }
+                            }
+
+                            let localMin = null;
+                            let localMax = null;
+
+                            if (lineValues.length > 0) {
+                                localMin = Math.min(...lineValues);
+                                localMax = Math.max(...lineValues);
+                            }
+
+                            // display condition (update the color)
+                            for (let i = 0; i < Xindices.length; i++) {
+                                let cube = cubes[i][j][k];
+                                if (!cube) continue;
+
+                                let x;
+
+                                if (lineXs && i < lineXs.length) {
+                                    x = lineXs[i]; // order after sediment
+                                } else {
+                                    x = Xindices[i]; // original order
+                                }
+
+                                let y = baseY;
+                                let z = baseZ;
+
+                                let value = data_array[x][y][z];
+
+                                if (value !== null && !Number.isNaN(value) && localMin !== null) {
+                                    cubeLineHasValue = true;
+
+                                    currentColorScheme = document.getElementById('colorSchemeSelect').value;
+
+                                    let color = mapValueToColor(value, currentColorScheme, localMin, localMax);
+
+                                    // 有沉澱，透明度用 currentOpacity
+                                    cube.material.opacity = currentOpacity;
+                                    cubesOpacity[i][j][k] = cube.material.opacity;
+                                    cube.material.color.set(color);
+                                } else {
+                                    cube.material.opacity = 0;
+                                    cubesOpacity[i][j][k] = 0;
+                                }
+
+                                cube.userData.value = value;
+                                cube.userData.colorScheme = currentColorScheme;
+
+                                currentCubeColors.push({
+                                    position: { i, j, k },
+                                    color: cube.material.color.getStyle(),
+                                });
+                            }
+                        }
+                    }
+                } else {
+                    for (let i = 0; i < Xindices.length; i++) {
+                        let uniqueValue = uniqueX[Xindices[i]]; // 取得目前 uniqueX 類別的值
+                        let minMax = minMaxByUniqueX[uniqueValue]; // 取得這個類別的最小值和最大值
+
+                        for (let j = 0; j < Yindices.length; j++) {
+                            for (let k = 0; k < Zindices.length; k++) {
+                                let cube = cubes[i][j][k]; // 取得現有的立方體
+                                if (!cube) continue;
+                                
                                 let value = data_array[Xindices[i]][Yindices[j]][Zindices[k]];
 
                                 if (value !== null) {
@@ -1626,14 +1970,90 @@
                     }
                 }
             } else if (displayCondition === 'RangeY') {
-                for (let j = 0; j < Yindices.length; j++) {
-                    let uniqueValue = uniqueY[Yindices[j]];
-                    let minMax = minMaxByUniqueY[uniqueValue];
-
+                if (Ysediorder) {
                     for (let i = 0; i < Xindices.length; i++) {
                         for (let k = 0; k < Zindices.length; k++) {
-                            let cube = cubes[i][j][k];
-                            if (cube) {
+                            let cubeLineHasValue = false; // (X, Z) Line
+
+                            let baseX = Xindices[i];
+                            let baseZ = Zindices[k];
+
+                            // the order of Y in each (X, Z) Line after sediment
+                            const lineYs = (Ysediorder[baseX] && Ysediorder[baseX][baseZ])
+                                ? Ysediorder[baseX][baseZ]
+                                : [];
+
+                            // local min/max of each (X, Z) Line
+                            const lineValues = [];
+                            for (let idy = 0; idy < lineYs.length; idy++) {
+                                const yIdy = lineYs[idy];
+                                const v = data_array[baseX][yIdy][baseZ];
+                                if (v !== null && !Number.isNaN(v)) {
+                                    lineValues.push(v);
+                                }
+                            }
+
+                            let localMin = null;
+                            let localMax = null;
+
+                            if (lineValues.length > 0) {
+                                localMin = Math.min(...lineValues);
+                                localMax = Math.max(...lineValues);
+                            }
+
+                            // display condition (update the color)
+                            for (let j = 0; j < Yindices.length; j++) {
+                                let cube = cubes[i][j][k];
+                                if (!cube) continue;
+
+                                let y;
+
+                                if (lineYs && j < lineYs.length) {
+                                    y = lineYs[j]; // order after sediment
+                                } else {
+                                    y = Yindices[j]; // original order
+                                }
+
+                                let x = baseX;
+                                let z = baseZ;
+
+                                let value = data_array[x][y][z];
+
+                                if (value !== null && !Number.isNaN(value) && localMin !== null) {
+                                    cubeLineHasValue = true;
+
+                                    currentColorScheme = document.getElementById('colorSchemeSelect').value;
+
+                                    let color = mapValueToColor(value, currentColorScheme, localMin, localMax);
+
+                                    // 有沉澱，透明度用 currentOpacity
+                                    cube.material.opacity = currentOpacity;
+                                    cubesOpacity[i][j][k] = cube.material.opacity;
+                                    cube.material.color.set(color);
+                                } else {
+                                    cube.material.opacity = 0;
+                                    cubesOpacity[i][j][k] = 0;
+                                }
+
+                                cube.userData.value = value;
+                                cube.userData.colorScheme = currentColorScheme;
+
+                                currentCubeColors.push({
+                                    position: { i, j, k },
+                                    color: cube.material.color.getStyle(),
+                                });
+                            }
+                        }
+                    }
+                } else {
+                    for (let j = 0; j < Yindices.length; j++) {
+                        let uniqueValue = uniqueY[Yindices[j]];
+                        let minMax = minMaxByUniqueY[uniqueValue];
+
+                        for (let i = 0; i < Xindices.length; i++) {
+                            for (let k = 0; k < Zindices.length; k++) {
+                                let cube = cubes[i][j][k];
+                                if (!cube) continue;
                                 let value = data_array[Xindices[i]][Yindices[j]][Zindices[k]];
 
                                 if (value !== null) {
@@ -1662,14 +2082,90 @@
                     }
                 }
             } else if (displayCondition === 'RangeZ') {
-                for (let k = 0; k < Zindices.length; k++) {
-                    let uniqueValue = uniqueZ[Zindices[k]];
-                    let minMax = minMaxByUniqueZ[uniqueValue];
-
+                if (Zsediorder) {
                     for (let i = 0; i < Xindices.length; i++) {
                         for (let j = 0; j < Yindices.length; j++) {
-                            let cube = cubes[i][j][k];
-                            if (cube) {
+                            let cubeLineHasValue = false; // (X, Y) Line
+
+                            let baseX = Xindices[i];
+                            let baseY = Yindices[j];
+
+                            // the order of Y in each (X, Y) Line after sediment
+                            const lineZs = (Zsediorder[baseX] && Zsediorder[baseX][baseY])
+                                ? Zsediorder[baseX][baseY]
+                                : [];
+
+                            // local min/max of each (X, Y) Line
+                            const lineValues = [];
+                            for (let idz = 0; idz < lineZs.length; idz++) {
+                                const zIdz = lineZs[idz];
+                                const v = data_array[baseX][baseY][zIdz];
+                                if (v !== null && !Number.isNaN(v)) {
+                                    lineValues.push(v);
+                                }
+                            }
+
+                            let localMin = null;
+                            let localMax = null;
+
+                            if (lineValues.length > 0) {
+                                localMin = Math.min(...lineValues);
+                                localMax = Math.max(...lineValues);
+                            }
+
+                            // display condition (update the color)
+                            for (let k = 0; k < Zindices.length; k++) {
+                                let cube = cubes[i][j][k];
+                                if (!cube) continue;
+
+                                let z;
+
+                                if (lineZs && k < lineZs.length) {
+                                    z = lineZs[k]; // order after sediment
+                                } else {
+                                    z = Zindices[k]; // original order
+                                }
+
+                                let x = baseX;
+                                let y = baseY;
+
+                                let value = data_array[x][y][z];
+
+                                if (value !== null && !Number.isNaN(value) && localMin !== null) {
+                                    cubeLineHasValue = true;
+
+                                    currentColorScheme = document.getElementById('colorSchemeSelect').value;
+
+                                    let color = mapValueToColor(value, currentColorScheme, localMin, localMax);
+
+                                    // 有沉澱，透明度用 currentOpacity
+                                    cube.material.opacity = currentOpacity;
+                                    cubesOpacity[i][j][k] = cube.material.opacity;
+                                    cube.material.color.set(color);
+                                } else {
+                                    cube.material.opacity = 0;
+                                    cubesOpacity[i][j][k] = 0;
+                                }
+
+                                cube.userData.value = value;
+                                cube.userData.colorScheme = currentColorScheme;
+
+                                currentCubeColors.push({
+                                    position: { i, j, k },
+                                    color: cube.material.color.getStyle(),
+                                });
+                            }
+                        }
+                    }
+                } else {
+                    for (let k = 0; k < Zindices.length; k++) {
+                        let uniqueValue = uniqueZ[Zindices[k]];
+                        let minMax = minMaxByUniqueZ[uniqueValue];
+
+                        for (let i = 0; i < Xindices.length; i++) {
+                            for (let j = 0; j < Yindices.length; j++) {
+                                let cube = cubes[i][j][k];
+                                if (!cube) continue;
                                 let value = data_array[Xindices[i]][Yindices[j]][Zindices[k]];
 
                                 if (value !== null) {
@@ -1704,53 +2200,92 @@
                         for (let k = 0; k < Zindices.length; k++) {
                             // 在立方體已經創建的基礎上進行
                             let cube = cubes[i][j][k]; // 取得現有的立方體
+                            if (!cube) continue;
 
-                            if (cube) {
-                                // 使用排序後的索引從 data_array 取得值
-                                let value = data_array[Xindices[i]][Yindices[j]][Zindices[k]];
+                            // 基礎座標
+                            let baseX = Xindices[i];
+                            let baseY = Yindices[j];
+                            let baseZ = Zindices[k];
 
-                                let color;
+                            let x = baseX;
+                            let y = baseY;
+                            let z = baseZ;
 
-                                if (value !== null) {
-                                    // 獲取當前選擇的顏色方案
-                                    currentColorScheme = document.getElementById('colorSchemeSelect').value;
-                                    // 使用 mapValueToColor 函數和正規化後的值來設置立方體的顏色
-                                    color = mapValueToColor(value, currentColorScheme, globalMin, globalMax);
+                            // 沉澱
+                            if (typeof Xsediorder !== 'undefined' &&
+                                Xsediorder &&
+                                Xsediorder[baseY] &&
+                                Xsediorder[baseY][baseZ] &&
+                                i < Xsediorder[baseY][baseZ].length) {
+                                x = Xsediorder[baseY][baseZ][i];
+                            }
 
-                                    // 使用全域透明度變數
-                                    // cube.material.opacity = currentOpacity;
+                            if (typeof Ysediorder !== 'undefined' &&
+                                Ysediorder &&
+                                Ysediorder[baseX] &&
+                                Ysediorder[baseX][baseZ] &&
+                                j < Ysediorder[baseX][baseZ].length) {
+                                y = Ysediorder[baseX][baseZ][j];
+                            }
+
+                            if (typeof Zsediorder !== 'undefined' &&
+                                Zsediorder &&
+                                Zsediorder[baseX] &&
+                                Zsediorder[baseX][baseY] &&
+                                k < Zsediorder[baseX][baseY].length) {
+                                z = Zsediorder[baseX][baseY][k];
+                            }
+
+                            // 使用排序後的索引從 data_array 取得值 (用 (x,y,z) 取值)
+                            let value = data_array[x][y][z];
+
+                            let color;
+
+                            if (value !== null) {
+                                // 獲取當前選擇的顏色方案
+                                currentColorScheme = document.getElementById('colorSchemeSelect').value;
+                                // 使用 mapValueToColor 函數和正規化後的值來設置立方體的顏色
+                                color = mapValueToColor(value, currentColorScheme, globalMin, globalMax);
+
+                                // 使用全域透明度變數
+                                if (!Xsediorder && !Ysediorder && !Zsediorder) {
                                     cube.material.opacity = cubesOpacity[i][j][k]; // 透明度更新為目前透明度
                                 } else {
-                                    cube.material.opacity = 0; // 空值立方體保持完全透明
+                                    cube.material.opacity = currentOpacity;
                                 }
-
-                                cubesOpacity[i][j][k] = cube.material.opacity;
-
-                                // 更新立方體材料的顏色
-                                cube.material.color.set(color);
-
-                                // 儲存顏色資料值和顏色方案，即使是透明的立方體也這樣做，以便保持資訊的完整性
-                                cube.userData.value = value;
-                                cube.userData.colorScheme = currentColorScheme;
-
-                                cube.userData.tooltipText = fieldX + "：" + uniqueX[Xindices[i]] + "<br>" +
-                                    fieldY + "：" + uniqueY[Yindices[j]] + "<br>" +
-                                    fieldZ + "：" + uniqueZ[Zindices[k]] + "<br>" +
-                                    fieldvalue + "：" + value; // 存儲懸浮提示文本
-
-                                cube.material.transparent = true;
-                                cube.material.needsUpdate = true; // 確保 Three.js 知道需要更新材料
-
-                                // 儲存顏色及位置資訊
-                                currentCubeColors.push({
-                                    position: { i, j, k },
-                                    color: cube.material.color.getStyle(), // 轉換為 CSS 顏色字串
-                                });
+                            } else {
+                                cube.material.opacity = 0; // 空值立方體保持完全透明
                             }
+
+                            cubesOpacity[i][j][k] = cube.material.opacity;
+
+                            // 更新立方體材料的顏色
+                            cube.material.color.set(color);
+
+                            // 儲存顏色資料值和顏色方案，即使是透明的立方體也這樣做，以便保持資訊的完整性
+                            cube.userData.value = value;
+                            cube.userData.colorScheme = currentColorScheme;
+
+                            cube.userData.tooltipText = 
+                                fieldX + "：" + uniqueX[x] + "<br>" +
+                                fieldY + "：" + uniqueY[y] + "<br>" +
+                                fieldZ + "：" + uniqueZ[z] + "<br>" +
+                                fieldvalue + "：" + value; // 存儲懸浮提示文本
+
+                            cube.material.transparent = true;
+                            cube.material.needsUpdate = true; // 確保 Three.js 知道需要更新材料
+
+                            // 儲存顏色及位置資訊
+                            currentCubeColors.push({
+                                position: { i, j, k },
+                                color: cube.material.color.getStyle(), // 轉換為 CSS 顏色字串
+                            });
                         }
                     }
                 }
-                updateCubeColorsBasedOnSlider(globalSliderMinforcolor, globalSliderMaxforcolor);
+                if (!Xsediorder && !Ysediorder && !Zsediorder) {
+                    updateCubeColorsBasedOnSlider(globalSliderMinforcolor, globalSliderMaxforcolor);
+                }
             }
             // 在立方體創建後更新 colorbar
             updateColorbar(currentColorScheme, globalMin, globalMax, colorbarContainerforcube, colorbarforcube, colorbarMinLabelforcube, colorbarMaxLabelforcube);
@@ -1762,10 +2297,44 @@
         // 為 display Condition 下拉式選單新增事件監聽器
         document.getElementById('DisplayCondition').addEventListener('change', function() {
             // 只有在資料載入後才調用
-            if (isDataLoaded) {
+            if (!isDataLoaded) return;
             // clearbar();
 
-            if (this.value != 'RangeMatrix') {
+            let displayvalue = this.value;
+
+            // // 恢復使用沉澱，並顯示正常標誌
+            // sedimentXforban.disabled = false;
+            // sedimentXforban.style.cursor = 'auto';
+
+            // sedimentYforban.disabled = false;
+            // sedimentYforban.style.cursor = 'auto';
+
+            // sedimentZforban.disabled = false;
+            // sedimentZforban.style.cursor = 'auto';
+            
+            // // 禁止使用沉澱
+            // if (displayvalue === "RangeX") {
+            //     // 只能用 X 的 display condition → 禁用 Y、Z 的沉澱
+            //     sedimentYforban.disabled = true;
+            //     sedimentYforban.style.cursor = 'not-allowed';
+
+            //     sedimentZforban.disabled = true;
+            //     sedimentZforban.style.cursor = 'not-allowed';
+            // } else if (displayvalue === "RangeY") {
+            //     sedimentXforban.disabled = true;
+            //     sedimentXforban.style.cursor = 'not-allowed';
+
+            //     sedimentZforban.disabled = true;
+            //     sedimentZforban.style.cursor = 'not-allowed';
+            // } else if (displayvalue === "RangeZ") {
+            //     sedimentXforban.disabled = true;
+            //     sedimentXforban.style.cursor = 'not-allowed';
+
+            //     sedimentYforban.disabled = true;
+            //     sedimentYforban.style.cursor = 'not-allowed';
+            // }
+
+            if (displayvalue != 'RangeMatrix') {
                 // 停用滑動條並顯示禁止標誌
                 $("#double-slider").slider("disable"); // 禁用滑動條
                 $("#double-slider").css("cursor", "not-allowed !important"); // 顯示禁止滑鼠樣式
@@ -1790,7 +2359,6 @@
             applyChangesBasedOnNewIndices(globalvaluedfields);
 
             filterCubes();
-            }
         });
 
         // 為 X 軸排序下拉式選單新增事件監聽器
@@ -4796,19 +5364,23 @@
                             window[chartId + 'ChartInstance'].data.datasets[0].backgroundColor[i] = defaultColor;  // 將顏色變回未選取的顏色
 
                             // 根據所選 value range 將條件添加至 rangeConditions
-                            filterCubesbyvalueaddinselectedCategories(label)
+                            filterCubesbyvalueaddinselectedCategories(label);
+                            // console.log('clickedLabel', label);
                         } else {
                             selectedHistogramBars.add(label);
                             window[chartId + 'ChartInstance'].data.datasets[0].backgroundColor[i] = selectedColor;  // 將顏色變為選取的顏色
 
                             // 根據所選 value range 將條件添加至 rangeConditions
-                            filterCubesbyvalueaddinselectedCategories(label)
+                            filterCubesbyvalueaddinselectedCategories(label);
+                            // console.log('clickedLabel', label);
                         }
                     }
                     window[chartId + 'ChartInstance'].update();
 
                     filterCubes();  // 根據所選條件進行篩選
                     isDragging = false;
+
+                    console.log('rangeConditions', rangeConditions);
                 }
             });
 
@@ -4817,9 +5389,37 @@
 
         // 根據所選 value range 將條件添加至 rangeConditions
         function filterCubesbyvalueaddinselectedCategories(clickedLabel) {
-            const rangeParts = clickedLabel.split("-");
-            const minValue = parseFloat(rangeParts[0]);
-            const maxValue = parseFloat(rangeParts[rangeParts.length - 1]);
+            let minStr, maxStr;
+
+            const firstDash = clickedLabel.indexOf('-');
+            const secondDash = clickedLabel.indexOf('-', firstDash + 1);
+
+            if (firstDash === -1) { // 字串裡面完全沒有 - 這個符號
+                return;
+            }
+
+            if (firstDash === 0 && secondDash !== -1) {
+                // 第一個 - 是負號，第二個 - 是分隔，例："-0.16-11.05" 或 "-11.05--0.16"
+                minStr = clickedLabel.slice(0, secondDash); // 包含負號，例如 "-0.16"
+                maxStr = clickedLabel.slice(secondDash + 1); // 例如 "11.05" 或 "-0.16"
+            } else {
+                // 例："0.16-11.05" → 一般情況直接 split
+                const parts = clickedLabel.split('-');
+
+                if (parts.length < 2) {
+                    return;
+                }
+
+                minStr = parts[0];
+                maxStr = parts[1];
+            }
+
+            const minValue = parseFloat(minStr);
+            const maxValue = parseFloat(maxStr);
+
+            if (Number.isNaN(minValue) || Number.isNaN(maxValue)) {
+                return;
+            }
 
             const rangeKey = `${minValue}-${maxValue}`;
 
@@ -4989,7 +5589,7 @@
                             }
                         }
                         else
-                        {   
+                        {
                             // 非遺失值立方體根據滑動條更新透明度
                             if (value < globalSliderMin || value > globalSliderMax) {
                                 // 值不在滑動條選擇的範圍內
@@ -6280,7 +6880,7 @@
             // fillSelectfor2dheatmap('yAxisCate', uniqueY);
             // fillSelectfor2dheatmap('zAxisCate', uniqueZ);
 
-            // console.log(data_array);
+            console.log(data_array);
 
             // 計算最小值和最大值 (for colour)
             var minMax = findMinMax(data, valueField);
@@ -6757,24 +7357,24 @@
 
             // 設置初始位置
             floatWindowforchartX.style.left = '320px';
-            floatWindowforchartX.style.right = 'autopx';
+            floatWindowforchartX.style.right = 'auto';
             floatWindowforchartX.style.top = '110px';
             floatWindowforchartX.style.width = '300px';
             floatWindowforchartX.style.height = '210px';
 
             floatWindowforchartY.style.left = '320px';
-            floatWindowforchartY.style.right = 'autopx';
+            floatWindowforchartY.style.right = 'auto';
             floatWindowforchartY.style.top = '340px';
             floatWindowforchartY.style.width = '300px';
             floatWindowforchartY.style.height = '210px';
 
             floatWindowforchartZ.style.left = '320px';
-            floatWindowforchartZ.style.right = 'autopx';
+            floatWindowforchartZ.style.right = 'auto';
             floatWindowforchartZ.style.top = '570px';
             floatWindowforchartZ.style.width = '300px';
             floatWindowforchartZ.style.height = '210px';
 
-            floatWindowforcharthis.style.left = 'autopx';
+            floatWindowforcharthis.style.left = 'auto';
             floatWindowforcharthis.style.right = '205px';
             floatWindowforcharthis.style.top = '110px';
             floatWindowforcharthis.style.width = '300px';
@@ -7179,6 +7779,30 @@
         #hollowSizeValue {
             margin-left: 6px;
         }
+
+        /* #sedimentX {
+            width: 190px;
+            margin-bottom: 13px;
+            margin-top: 4px;
+            border: 1px solid #ced4da; /* Similar to form-control styling for borders */
+            /*  border-radius: 5px; /* 加入圓角，根據需要調整圓角大小 */
+        /* } 
+
+        #sedimentY {
+            width: 190px;
+            margin-bottom: 13px;
+            margin-top: 4px;
+            border: 1px solid #ced4da; /* Similar to form-control styling for borders */
+            /* border-radius: 5px; /* 加入圓角，根據需要調整圓角大小 */
+        /* } 
+
+        #sedimentZ {
+            width: 190px;
+            margin-bottom: 13px;
+            margin-top: 4px;
+            border: 1px solid #ced4da; /* Similar to form-control styling for borders */
+            /* border-radius: 5px; /* 加入圓角，根據需要調整圓角大小 */
+        /* }  */
 
         #fontSize {
             width: 165px; /* Adjust the width as needed */
@@ -9156,6 +9780,52 @@
                 <!-- End subsize -->
             </li>
             <!-- End size -->
+
+            <!-- sediment -->
+            <!--  <li class="side-nav-menu-item side-nav-has-menu">
+                <a class="side-nav-menu-link media align-items-center" href="#"
+                   data-target="#subsediment">
+                  <span class="side-nav-menu-icon d-flex mr-3">
+                    <i class="fas fa-sort-amount-down-alt"></i>
+                  </span>
+                    <span class="side-nav-fadeout-on-closed media-body">Sediment Display</span>
+                    <span class="side-nav-control-icon d-flex">
+                <i class="gd-angle-right side-nav-fadeout-on-closed"></i>
+              </span>
+                    <span class="side-nav__indicator side-nav-fadeout-on-closed"></span>
+                </a> -->
+
+                <!-- subsediment -->
+                <!-- <ul id="subsediment" class="side-nav-menu side-nav-menu-second-level mb-0">
+                    <li class="side-nav-menu-item">
+                        <label for="sedimentX">X Direction</label>
+                        <br>
+                        <select id="sedimentX">
+                            <option value="null" selected> ----- </option>
+                            <option value="leftward">Leftward</option>
+                            <option value="rightward">Rightward</option>
+                        </select>
+                        <br>
+                        <label for="sedimentY">Y Direction</label>
+                        <br>
+                        <select id="sedimentY">
+                            <option value="null" selected> ----- </option>
+                            <option value="upward">Upward</option>
+                            <option value="downward">Downward</option>
+                        </select>
+                        <br>
+                        <label for="sedimentZ">Z Direction</label>
+                        <br>
+                        <select id="sedimentZ">
+                            <option value="null" selected> ----- </option>
+                            <option value="leftward">Leftward</option>
+                            <option value="rightward">Rightward</option>
+                        </select>
+                    </li>
+                </ul> -->
+                <!-- End subsediment -->
+            <!-- </li> -->
+            <!-- End sediment --> 
 
             <!-- Font -->
             <li class="side-nav-menu-item side-nav-has-menu">
