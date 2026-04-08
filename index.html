@@ -277,9 +277,10 @@
 
     <script type="module">
         import Papa from 'https://cdn.skypack.dev/papaparse@5.3.0';
-        import * as THREE from 'https://cdn.skypack.dev/three@0.128.0';
-        import { OrbitControls } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/controls/OrbitControls.js';
-        // import { TrackballControls } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/controls/TrackballControls.js';
+        // import * as THREE from 'three';
+        // import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+        import * as THREE from './js/three.module.js';
+        import { OrbitControls } from './js/OrbitControls.js';
 
         $( function() {
             // 初始化雙按鈕滑動條
