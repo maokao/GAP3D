@@ -3409,7 +3409,7 @@
                 gapX.row_number = numX;
 
                 let covCount = 0;
-                // 設定 yc
+                // 設定 xc
                 if(xc_num>0)
                 {
                     gapX.yc = xc_num;
@@ -3419,7 +3419,7 @@
                     gapX.compute_yc_minmax();
                     covCount++;
                 }
-                // 設定 yd
+                // 設定 xd
                 if(xd_num>0)
                 {
                     gapX.yd = xd_num;
@@ -6444,9 +6444,9 @@
             let filePath;
 
             if (defaultDataselectedOption === 'airpollution') {
-                filePath = 'data/df_air.csv';
-            } else if (defaultDataselectedOption === 'premierleague') {
-                filePath = 'data/df_football.csv';
+                filePath = 'data/air_ pollution.csv';
+            } else if (defaultDataselectedOption === 'mlb') {
+                filePath = 'data/MLB.csv';
             }
 
             // 使用 fetch API 讀取 CSV 文件
@@ -6518,14 +6518,127 @@
                         // console.log('xc[0]:', xc[0]);
                         // console.log('select2:', selectedData.select2);
                         // console.log('Row count:', selectedData.select2.length);
-                    } else if (defaultDataselectedOption === 'premierleague') {
-                        // 前三個欄位為 selectedFields，第四個欄位為 selectedValueField
+                    } else if (defaultDataselectedOption === 'mlb') {
+                        // 12 - 14 欄位為 selectedFields，16 欄位為 selectedValueField
                         var defaultDataselectedFields = [
-                            [headers[0]],
-                            [headers[1]],
-                            [headers[2]],
+                            [headers[11]],
+                            [headers[12]],
+                            [headers[13]],
                         ];
-                        var defaultDataselectedValueField = headers[3];
+                        var defaultDataselectedValueField = headers[15];
+
+                        // --------------------------------------------------------------------------------------------------
+                        
+                        // 清空本次 select1, select2 相關容器
+                        selectedData = selectedData || {};
+
+                        selectedData.select1 = [];
+                        xd = [];
+                        xd_name = [];
+                        xd_num = 0;
+
+                        selectedData.select2 = [];
+                        xc = [];
+                        xc_name = [];
+                        xc_num = 0;
+
+                        // X-wise covariates
+                        const rows = dataRows.map(r => ({
+                            Team: (r.Team ?? '').toString().trim(),
+                            League: (r.League ?? '').toString().trim(),
+                            Rank_2016: r.Rank_2016,
+                            Rank_2017: r.Rank_2017,
+                            Rank_2018: r.Rank_2018,
+                            Rank_2019: r.Rank_2019,
+                            Rank_2020: r.Rank_2020,
+                            Rank_2021: r.Rank_2021,
+                            Rank_2022: r.Rank_2022,
+                            Rank_2023: r.Rank_2023,
+                            Rank_2024: r.Rank_2024
+                        })).filter(r => r.Team);
+
+                        const seen = new Set();
+                        const uniqueByTeam = [];
+
+                        for (const r of rows) {
+                        if (seen.has(r.Team)) continue;
+                        seen.add(r.Team);
+                        uniqueByTeam.push(r);
+                        }
+
+                        // 寫入 selectedColumns 和 selectedData
+                        window.selectedColumns = window.selectedColumns || {};
+                        window.selectedData = window.selectedData || { select1: [], select2: [], select3: [], select4: [], select5: [], select6: [] };
+
+                        selectedColumns.select1 = ['League'];
+                        selectedData.select1 = uniqueByTeam;
+
+                        // Xd 的類別資料與欄名
+                        const xdCols = ['League'];
+                        const xd_cates = selectedData.select1.map(row => (row.League ?? '').toString().trim());
+
+                        // Xd encoding
+                        const leagueLevels = [...new Set(xd_cates)];
+                        const leagueMap = {};
+                        leagueLevels.forEach((d, i) => {
+                        leagueMap[d] = i;
+                        });
+                        const xd_encoded = xd_cates.map(d => leagueMap[d]);
+
+                        xd = xd_encoded.map(v => [v]); // transition to 2D
+                        xd_name = xdCols.slice();
+                        xd_num = xdCols.length; // 1
+
+                        selectedColumns.select2 = ['Rank_2016', 'Rank_2017', 'Rank_2018', 'Rank_2019', 'Rank_2020', 'Rank_2021', 'Rank_2022', 'Rank_2023', 'Rank_2024'];
+                        selectedData.select2 = uniqueByTeam;
+
+                        // Xc 的數值矩陣與欄名
+                        const xcCols = ['Rank_2016', 'Rank_2017', 'Rank_2018', 'Rank_2019', 'Rank_2020', 'Rank_2021', 'Rank_2022', 'Rank_2023', 'Rank_2024'];
+
+                        xc = selectedData.select2.map(row => xcCols.map(c => Number(row[c])));
+                        xc_name = xcCols.slice();
+                        xc_num  = xcCols.length; // 9
+                        
+                        // Z-wise covariates
+                        // 清空本次 select5 相關容器
+                        selectedData.select5 = [];
+                        zd = [];
+                        zd_name = [];
+                        zd_num = 0;
+
+                        // Z-wise covariates
+                        const Zrows = dataRows.map(r => ({
+                            Stat: (r.Stat ?? '').toString().trim(),
+                            Category: (r.Category ?? '').toString().trim()
+                        })).filter(r => r.Stat);
+
+                        const Zseen = new Set();
+                        const uniqueByStat = [];
+
+                        for (const r of Zrows) {
+                        if (Zseen.has(r.Stat)) continue;
+                        seen.add(r.Stat);
+                        uniqueByStat.push(r);
+                        }
+
+                        selectedColumns.select5 = ['Category'];
+                        selectedData.select5 = uniqueByStat;
+
+                        // Zd 的類別資料與欄名
+                        const zdCols = ['Category'];
+                        const zd_cates = selectedData.select5.map(row => (row.Category ?? '').toString().trim());
+
+                        // Zd encoding
+                        const CategoryLevels = [...new Set(zd_cates)];
+                        const CategoryMap = {};
+                        CategoryLevels.forEach((d, i) => {
+                        CategoryMap[d] = i;
+                        });
+                        const zd_encoded = zd_cates.map(d => CategoryMap[d]);
+
+                        zd = zd_encoded.map(v => [v]); // transition to 2D
+                        zd_name = zdCols.slice();
+                        zd_num = zdCols.length; // 1
                     }
                     
                     globalvaluedfields = defaultDataselectedValueField; // for tooltip
@@ -9205,8 +9318,8 @@
                                 <label for="defaultdata">Example Data</label>
                                 <br>
                                 <select id="defaultdataselest">
-                                    <option value="airpollution" selected>U.S. Air Pollut. (2023)</option>
-                                    <option value="premierleague">Premier League (23/24)</option>
+                                    <option value="airpollution" selected>Air Pollution</option>
+                                    <option value="mlb">MLB</option>
                                 </select>
                                 <br>
                                 <!-- 輸入資料 -->
