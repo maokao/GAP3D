@@ -3902,7 +3902,7 @@ setupHeatmap2(nowdata, nowID, x, y, mode, heatmapId, colorID) {
             let paletteName = self.ycPalette;
             var colorScale;
             if(paletteName == "GAP_Rainbow")
-                colorScale = GAP_Rainbow(self.yc_min_value[0], self.yc_max_value[0]);
+                colorScale = GAP_Rainbow(self.yc_max_value[0], self.yc_min_value[0]);
             else if(paletteName == "GAP_Blue_White_Red")
                 colorScale = GAP_Blue_White_Red(self.yc_min_value[0], self.yc_max_value[0]);
             else{
