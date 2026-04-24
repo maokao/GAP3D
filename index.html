@@ -6472,10 +6472,10 @@
                         ];
                         var defaultDataselectedValueField = headers[5];
 
-                        // 取索引 (headers)
-                        const latIdx  = headers.indexOf('Latitude');
-                        const lonIdx  = headers.indexOf('Longitude');
-                        const stateIdx = headers.indexOf('State');
+                        // // 取索引 (headers)
+                        // const latIdx  = headers.indexOf('Latitude');
+                        // const lonIdx  = headers.indexOf('Longitude');
+                        // const stateIdx = headers.indexOf('State');
 
                         // 清空本次 select2 相關容器
                         selectedData = selectedData || {};
@@ -6495,9 +6495,9 @@
                         const seen = new Set();
                         const uniqueByState = [];
                         for (const r of rows) {
-                        if (seen.has(r.State)) continue;
-                        seen.add(r.State);
-                        uniqueByState.push(r);
+                            if (seen.has(r.State)) continue;
+                            seen.add(r.State);
+                            uniqueByState.push(r);
                         }
 
                         // 寫入 selectedColumns 和 selectedData
@@ -6526,8 +6526,6 @@
                             [headers[13]],
                         ];
                         var defaultDataselectedValueField = headers[15];
-
-                        // --------------------------------------------------------------------------------------------------
                         
                         // 清空本次 select1, select2 相關容器
                         selectedData = selectedData || {};
@@ -6561,9 +6559,9 @@
                         const uniqueByTeam = [];
 
                         for (const r of rows) {
-                        if (seen.has(r.Team)) continue;
-                        seen.add(r.Team);
-                        uniqueByTeam.push(r);
+                            if (seen.has(r.Team)) continue;
+                            seen.add(r.Team);
+                            uniqueByTeam.push(r);
                         }
 
                         // 寫入 selectedColumns 和 selectedData
@@ -6589,6 +6587,12 @@
                         xd_name = xdCols.slice();
                         xd_num = xdCols.length; // 1
 
+                        // console.log('xd_num:', xd_num);
+                        // console.log('xd_name:', xd_name);
+                        // console.log('xd[0]:', zd[0]);
+                        // console.log('select1:', selectedData.select1);
+                        // console.log('Row count:', selectedData.select1.length);
+
                         selectedColumns.select2 = ['Rank_2016', 'Rank_2017', 'Rank_2018', 'Rank_2019', 'Rank_2020', 'Rank_2021', 'Rank_2022', 'Rank_2023', 'Rank_2024'];
                         selectedData.select2 = uniqueByTeam;
 
@@ -6609,36 +6613,49 @@
                         // Z-wise covariates
                         const Zrows = dataRows.map(r => ({
                             Stat: (r.Stat ?? '').toString().trim(),
-                            Category: (r.Category ?? '').toString().trim()
+                            Var_mode: (r.Var_mode ?? '').toString().trim()
                         })).filter(r => r.Stat);
+
+                        // console.log(Zrows);
 
                         const Zseen = new Set();
                         const uniqueByStat = [];
 
                         for (const r of Zrows) {
-                        if (Zseen.has(r.Stat)) continue;
-                        seen.add(r.Stat);
-                        uniqueByStat.push(r);
+                            if (Zseen.has(r.Stat)) continue;
+                            Zseen.add(r.Stat);
+                            uniqueByStat.push(r);
                         }
 
-                        selectedColumns.select5 = ['Category'];
+                        // // 寫入 selectedColumns 和 selectedData
+                        // window.selectedColumns = window.selectedColumns || {};
+                        // window.selectedData = window.selectedData || { select1: [], select2: [], select3: [], select4: [], select5: [], select6: [] };
+
+                        selectedColumns.select5 = ['Var_mode'];
                         selectedData.select5 = uniqueByStat;
 
                         // Zd 的類別資料與欄名
-                        const zdCols = ['Category'];
-                        const zd_cates = selectedData.select5.map(row => (row.Category ?? '').toString().trim());
+                        const zdCols = ['Var_mode'];
+                        const zd_cates = selectedData.select5.map(row => (row.Var_mode ?? '').toString().trim());
 
                         // Zd encoding
-                        const CategoryLevels = [...new Set(zd_cates)];
-                        const CategoryMap = {};
-                        CategoryLevels.forEach((d, i) => {
-                        CategoryMap[d] = i;
+                        const Var_modeLevels = [...new Set(zd_cates)];
+                        const Var_modeMap = {};
+                        Var_modeLevels.forEach((d, i) => {
+                        Var_modeMap[d] = i;
                         });
-                        const zd_encoded = zd_cates.map(d => CategoryMap[d]);
+                        const zd_encoded = zd_cates.map(d => Var_modeMap[d]);
 
                         zd = zd_encoded.map(v => [v]); // transition to 2D
                         zd_name = zdCols.slice();
                         zd_num = zdCols.length; // 1
+
+                        // console.log('zd_num:', zd_num);
+                        // console.log('zd_name:', zd_name);
+                        // console.log('zd[0]:', zd[0]);
+                        // console.log('selectedData:', selectedData);
+                        // console.log('select5:', selectedData.select5);
+                        // console.log('Row count:', selectedData.select5.length);
                     }
                     
                     globalvaluedfields = defaultDataselectedValueField; // for tooltip

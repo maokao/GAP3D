@@ -1,4 +1,4 @@
-League,Rank_2016,Rank_2017,Rank_2018,Rank_2019,Rank_2020,Rank_2021,Rank_2022,Rank_2023,Rank_2024,Category,Team,Season,Stat,Value,Value_Scaled
+League,Rank_2016,Rank_2017,Rank_2018,Rank_2019,Rank_2020,Rank_2021,Rank_2022,Rank_2023,Rank_2024,Var_mode,Team,Season,Stat,Value,Value_Scaled
 NL,24,6,16,13,26,30,19,13,10,pitching,ARI,2016,K.BB_p,2.19,0.151658768
 NL,24,6,16,13,26,30,19,13,10,pitching,ARI,2016,HR.9_p,1.25,0.392523364
 NL,24,6,16,13,26,30,19,13,10,pitching,ARI,2016,K._p,0.205,0.305785124
