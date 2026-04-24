@@ -3902,7 +3902,7 @@ setupHeatmap2(nowdata, nowID, x, y, mode, heatmapId, colorID) {
             let paletteName = self.ycPalette;
             var colorScale;
             if(paletteName == "GAP_Rainbow")
-                colorScale = GAP_Rainbow(self.yc_max_value[0], self.yc_min_value[0]);
+                colorScale = GAP_Rainbow(self.yc_min_value[0], self.yc_max_value[0]);
             else if(paletteName == "GAP_Blue_White_Red")
                 colorScale = GAP_Blue_White_Red(self.yc_min_value[0], self.yc_max_value[0]);
             else{
@@ -4119,7 +4119,7 @@ setupHeatmap2(nowdata, nowID, x, y, mode, heatmapId, colorID) {
                     if(paletteName == "GAP_Rainbow")
                         colorScale2 = GAP_Rainbow(self.yc_min_value[colnum], self.yc_max_value[colnum]);
                     else if(paletteName == "GAP_Blue_White_Red")
-                        colorScale2 = GAP_Blue_White_Red(self.yc_max_value[colnum], self.yc_min_value[colnum]);
+                        colorScale2 = GAP_Blue_White_Red(self.yc_min_value[colnum], self.yc_max_value[colnum]);
                     else{
                         colorScale2 = d3.scaleSequential()
                             .domain([self.yc_max_value[colnum], self.yc_min_value[colnum]])
