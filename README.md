@@ -1,52 +1,54 @@
-# GAP3D Online 系統說明書
+# GAP3D Online User Guide
 
-GAP3D 是一個網頁版的三維資料視覺化系統，把 **Generalized Association Plots (GAP)** 的矩陣視覺化概念延伸到三維資料。每一筆觀測值由三個類別變數 (X、Y、Z) 定位，以 3D cube 中小立方體的顏色呈現數值；使用者可對三個軸分別計算 proximity、排序 (seriation) 與 flip，並選取任一切面以 GAP 矩陣圖檢視，探索三向資料的結構。
+**English** | [繁體中文](README.zh-TW.md)
 
-線上版：<https://maokao.github.io/GAP3D>
+GAP3D is a web-based system for visualizing three-way data. It extends the matrix visualization concept of **Generalized Association Plots (GAP)** to three dimensions: each observation is located by three categorical variables (X, Y, Z) and its value is shown as the color of a small cube inside a 3D cube. For each axis you can compute proximity, apply seriation and flipping, and pick any section of the cube to examine as a GAP matrix plot, helping you explore the structure of three-way data.
 
----
-
-## 目錄
-
-1. [開啟系統](#1-開啟系統)
-2. [準備資料](#2-準備資料)
-3. [畫面介紹](#3-畫面介紹)
-4. [操作 3D Cube](#4-操作-3d-cube)
-5. [排序與 Proximity](#5-排序與-proximity)
-6. [側邊選單功能](#6-側邊選單功能)
-7. [切面檢視 (Section View)](#7-切面檢視-section-view)
-8. [匯出結果](#8-匯出結果)
-9. [常見問題](#9-常見問題)
+Online version: <https://maokao.github.io/GAP3D>
 
 ---
 
-## 1. 開啟系統
+## Contents
 
-- **線上使用**：以瀏覽器開啟 <https://maokao.github.io/GAP3D>。
-- **本機使用**：系統需透過網頁伺服器開啟，直接雙擊 `index.html` 會無法讀取資料。在專案資料夾中執行：
+1. [Opening the System](#1-opening-the-system)
+2. [Preparing Data](#2-preparing-data)
+3. [Screen Layout](#3-screen-layout)
+4. [Working with the 3D Cube](#4-working-with-the-3d-cube)
+5. [Ordering and Proximity](#5-ordering-and-proximity)
+6. [Side Menu Functions](#6-side-menu-functions)
+7. [Section View](#7-section-view)
+8. [Exporting Results](#8-exporting-results)
+9. [FAQ](#9-faq)
+
+---
+
+## 1. Opening the System
+
+- **Online**: open <https://maokao.github.io/GAP3D> in your browser.
+- **Locally**: the system must be served through a web server; double-clicking `index.html` will not load the data. In the project folder, run:
 
   ```bash
   python -m http.server 8000
   ```
 
-  再以瀏覽器開啟 `http://localhost:8000/index.html`。
+  then open `http://localhost:8000/index.html` in your browser.
 
-建議使用最新版 Chrome、Edge 或 Firefox。
+The latest version of Chrome, Edge, or Firefox is recommended.
 
 ---
 
-## 2. 準備資料
+## 2. Preparing Data
 
-### 資料格式
+### Data format
 
-使用「長格式 (long format)」的 CSV 檔：每一列是一個 (X, Y, Z) 組合的觀測值。
+Use a CSV file in **long format**: each row is the observation for one (X, Y, Z) combination.
 
-| 欄位 | 說明 |
+| Column | Description |
 |---|---|
-| X、Y、Z | 三個類別變數，各自的不重複值成為 cube 三個軸的類別 |
-| Value | 數值變數，對應到小立方體的顏色 |
+| X, Y, Z | Three categorical variables; their distinct values become the categories on the three axes of the cube |
+| Value | A numeric variable, mapped to the color of each small cube |
 
-範例 (Air Pollution)：
+Example (Air Pollution):
 
 ```csv
 State,Month,Pollutant,Concentration
@@ -55,218 +57,218 @@ Alabama,2024-02,CO,0.2347
 ...
 ```
 
-此例中 X = State、Y = Month、Z = Pollutant、Value = Concentration。
-沒有觀測值的 (X, Y, Z) 組合視為缺失值，以透明方式顯示。
+Here X = State, Y = Month, Z = Pollutant, and Value = Concentration.
+(X, Y, Z) combinations with no observation are treated as missing values and shown as transparent.
 
-### 載入資料
+### Loading data
 
-左側選單 **Select Data File**：
+In the side menu, open **Select Data File**:
 
-- **Example Data**：從下拉選單選擇內建範例資料 (Air Pollution、MLB)，選取後自動繪製。
-- **Import Data**：按 **Choose Data** 匯入自己的 CSV 檔，並指定 X、Y、Z 與數值欄位。
+- **Example Data**: choose a built-in example dataset (Air Pollution, MLB) from the drop-down list; it is plotted automatically.
+- **Import Data**: click **Choose Data** to import your own CSV file, then specify the X, Y, Z, and value columns.
 
 ---
 
-## 3. 畫面介紹
+## 3. Screen Layout
 
-| 區域 | 說明 |
+| Area | Description |
 |---|---|
-| 上方工具列 | Order X / Y / Z 與 Flip 下拉選單，設定三個軸的排序 |
-| 左側選單 | 資料、匯出、Proximity、篩選、顏色、切片、大小、字型、互動等設定 |
-| 中央 | 3D cube 主畫面 |
-| 右側 | 數值色階 (colorbar) |
-| 浮動視窗 | Proximity 矩陣、長條圖、直方圖、切面矩陣圖等，可拖曳、縮放與最小化 |
+| Top toolbar | Order X / Y / Z and Flip drop-down lists for ordering the three axes |
+| Side menu | Settings for data, export, proximity, filtering, color, slices, size, font, and interaction |
+| Center | The main 3D cube view |
+| Right | Color bar for data values |
+| Floating windows | Proximity matrices, bar charts, histograms, section matrix plots, etc.; they can be dragged, resized, and minimized |
 
 ---
 
-## 4. 操作 3D Cube
+## 4. Working with the 3D Cube
 
-| 操作 | 動作 |
+| Action | How |
 |---|---|
-| 旋轉 | 按住滑鼠左鍵拖曳 |
-| 縮放 | 滑鼠滾輪 |
-| 平移 | 在 **Interactive** 勾選 **Pan** 後拖曳 |
-| 顯示數值 | 在 **Interactive** 勾選 **Show Data on Hover**，滑鼠移到小立方體上即顯示其 X、Y、Z 類別與數值 |
-| 重設視角 | **Interactive** → **Reset Camera to Default** |
-| 選取切面 | 雙擊小立方體 (見第 7 節) |
+| Rotate | Drag with the left mouse button |
+| Zoom | Mouse wheel |
+| Pan | Check **Pan** under **Interactive**, then drag |
+| Show values | Check **Show Data on Hover** under **Interactive**; hovering over a small cube shows its X, Y, Z categories and value |
+| Reset view | **Interactive** → **Reset Camera to Default** |
+| Select a section | Double-click a small cube (see Section 7) |
 
 ---
 
-## 5. 排序與 Proximity
+## 5. Ordering and Proximity
 
 ### Proximity
 
-左側選單 **Proximity** 可分別計算 X、Y、Z 軸的 proximity matrix，結果以浮動視窗顯示：
+The **Proximity** side menu computes proximity matrices for the X, Y, and Z axes; results are shown in floating windows:
 
-- Distance：Euclidean Distance、City-Block (L1)
-- Similarity：Pearson's Correlation、Kendall's tau、Spearman's Rank、atan Correlation、abs(Pearson's Correlation)
+- Distance: Euclidean Distance, City-Block (L1)
+- Similarity: Pearson's Correlation, Kendall's tau, Spearman's Rank, atan Correlation, abs(Pearson's Correlation)
 
-### 排序 (Order) 與 Flip
+### Order and Flip
 
-上方工具列 **Order X / Y / Z** 設定各軸類別的排列順序：
+**Order X / Y / Z** in the top toolbar set the order of the categories on each axis:
 
-| 選項 | 說明 |
+| Option | Description |
 |---|---|
-| Original Order | 資料中的原始順序 |
-| Average / Single / Complete-Linkage | 階層式分群 (HCT) 的葉節點順序 |
-| R2E | Rank-two Ellipse 排序 |
-| Random | 隨機順序 |
+| Original Order | The order in the data |
+| Average / Single / Complete-Linkage | Leaf order of hierarchical clustering (HCT) |
+| R2E | Rank-two Ellipse seriation |
+| Random | Random order |
 
-Linkage 與 R2E 需先計算該軸的 proximity 才能選取。
-使用 Linkage 排序時，可再以 **Flip** (None、R2E、Uncle、GrandPa) 調整樹狀圖分支的翻轉方式。
+Linkage and R2E become available only after the proximity of that axis has been computed.
+With a linkage order, **Flip** (None, R2E, Uncle, GrandPa) controls how the dendrogram branches are flipped.
 
 ---
 
-## 6. 側邊選單功能
+## 6. Side Menu Functions
 
-| 選單 | 功能 |
+| Menu | Function |
 |---|---|
-| **Select Data File** | 選擇範例資料或匯入 CSV |
-| **Export** | 匯出結果 (見第 8 節) |
-| **Proximity** | 計算 X / Y / Z 軸的 proximity matrix |
-| **Filter** | 依數值範圍，或在長條圖 / 直方圖上選取，篩選要顯示的小立方體；可選聯集 (Union) 或交集 (Intersection) |
-| **Opacity** | 調整小立方體的透明度 |
-| **Color** | 設定資料與 proximity 的色階、反轉色階；**Display Condition** 可選擇以整個 cube 或各軸 (Range: Col. X / Y / Z) 的範圍上色 |
-| **Slices** | 沿 X / Y / Z 方向把 cube 切成多片並以 **Slices Gap** 拉開間距；下方的 **Section View** 用於切面檢視 |
-| **Cube Size** | 調整小立方體在三個方向的邊長，或把小立方體分開 |
-| **Font** | 調整軸標籤的字型大小 |
-| **Interactive** | 平移、滑鼠懸停顯示資料、重設相機、重設 cube |
+| **Select Data File** | Choose example data or import a CSV |
+| **Export** | Export results (see Section 8) |
+| **Proximity** | Compute proximity matrices for the X / Y / Z axes |
+| **Filter** | Filter which small cubes are shown by value range, or by selecting bars in the bar charts / histogram; choose Union or Intersection |
+| **Opacity** | Adjust the opacity of the small cubes |
+| **Color** | Set and reverse the color schemes for data and proximity; **Display Condition** colors by the range of the whole cube or of each axis (Range: Col. X / Y / Z) |
+| **Slices** | Cut the cube into slices along X / Y / Z and spread them apart with **Slices Gap**; **Section View** below is for examining a single section |
+| **Cube Size** | Adjust the edge lengths of the small cubes in the three directions, or separate the small cubes |
+| **Font** | Adjust the font size of the axis labels |
+| **Interactive** | Pan, show data on hover, reset camera, reset cube |
 
 ---
 
-## 7. 切面檢視 (Section View)
+## 7. Section View
 
-切面檢視可選取 cube 任一方向、任一位置的切面，並在視窗中以 GAP 矩陣圖呈現，進一步計算該切面的 row / column proximity 與排序。
+Section View lets you select a section at any position along any direction of the cube and display it as a GAP matrix plot in a window, where you can further compute row / column proximity and orderings for that section.
 
-### 7.1 選取切面
+### 7.1 Selecting a section
 
-在左側 **Slices** 選單下方的 **Section View**：
+In **Section View**, at the bottom of the **Slices** menu:
 
-1. 從下拉選單選擇方向：
-   - **X-Section**：固定一個 X 類別，顯示 Y × Z 矩陣
-   - **Y-Section**：固定一個 Y 類別，顯示 X × Z 矩陣
-   - **Z-Section**：固定一個 Z 類別，顯示 X × Y 矩陣
-2. 拖曳 **slider** 或按 `‹` `›` 選擇位置，下方會顯示目前切面的類別名稱。
-3. 勾選 **Highlight in cube**，可在 3D cube 上以紅框標示目前的切面 (預設不勾選)。
+1. Choose a direction from the drop-down list:
+   - **X-Section**: fixes one X category and shows the Y × Z matrix
+   - **Y-Section**: fixes one Y category and shows the X × Z matrix
+   - **Z-Section**: fixes one Z category and shows the X × Y matrix
+2. Drag the **slider** or click `‹` `›` to choose a position; the category name of the current section is shown below.
+3. Check **Highlight in cube** to outline the current section with a red box in the 3D cube (unchecked by default).
 
-快速選取：
+Shortcuts:
 
-- 在 3D cube 上 **雙擊** 小立方體，會選取經過它的切面。
-- **Shift + 雙擊** 會直接開啟該切面的視窗。
-- 在 Slices 選擇 X / Y / Z-Slices 時，Section View 的方向會跟著切換。
+- **Double-click** a small cube in the 3D cube to select the section passing through it.
+- **Shift + double-click** opens a window for that section directly.
+- Choosing X / Y / Z-Slices in the Slices menu switches the Section View direction accordingly.
 
-### 7.2 開啟切面視窗
+### 7.2 Opening a section window
 
-- **Open Section Window**：在頁面內開啟浮動視窗。可拖曳標題列移動、拖曳右下角調整大小，也可以同時開啟多個。
-- **Open in Browser Window**：以獨立的瀏覽器視窗開啟，適合放到另一個螢幕。若沒有反應，請允許此網站開啟彈出視窗。
+- **Open Section Window**: opens a floating window in the page. Drag the title bar to move it and drag the lower-right corner to resize; several windows can be open at once.
+- **Open in Browser Window**: opens a separate browser window, useful on a second monitor. If nothing happens, allow pop-ups for this site.
 
-### 7.3 視窗按鈕
+### 7.3 Window buttons
 
-| 按鈕 | 功能 |
+| Button | Function |
 |---|---|
-| 🔗 | 與 Section View 的 slider 連動 (預設開啟)。點一下變暗即鎖定在目前切面 |
-| ⇄ | 轉置：行列互換，Row 與 Column 的設定一併交換 |
-| ↻ | 依 cube 目前的狀態重新擷取切面 |
-| ⤓ | 將目前畫面存成 PNG |
-| ⧉ | 改以獨立瀏覽器視窗開啟，並帶著目前的設定 |
-| – | 最小化 / 還原 |
-| × | 關閉 |
+| 🔗 | Linked to the Section View slider (on by default). Click to dim it and lock the window to the current section |
+| ⇄ | Transpose: swap rows and columns, together with their Row / Column settings |
+| ↻ | Re-extract the section from the current state of the cube |
+| ⤓ | Save the current view as a PNG |
+| ⧉ | Open in a separate browser window, keeping the current settings |
+| – | Minimize / restore |
+| × | Close |
 
-> **比較兩個切面**：先開一個視窗並按 🔗 鎖定，再開第二個視窗並移動 slider，即可並排比較。
+> **Comparing two sections**: open a window and click 🔗 to lock it, then open a second window and move the slider to view the two sections side by side.
 
-### 7.4 GAP 設定
+### 7.4 GAP settings
 
-視窗上方的控制面板，**Row** 與 **Column** 各有四個選單：
+The control panel at the top of the window has four drop-down lists each for **Row** and **Column**:
 
-| 選單 | 選項 |
+| Menu | Options |
 |---|---|
-| **Proximity** | Distance：Euclidean Distance、City-Block (L1)<br>Similarity：Pearson's Correlation、Kendall's tau、Spearman's Rank、atan Correlation、abs(Pearson's Correlation)、Uncentered Correlation、abs(Uncentered Correlation) |
-| **Order** | **Order from Cube** (預設，與 3D cube 目前的排列相同)、Original Order、Average / Single / Complete-Linkage、R2E、Random |
-| **Flip** | None、R2E、Uncle、GrandPa (僅在 Linkage 排序時可用) |
-| **Color** | proximity 矩陣的色階。距離預設 **GAP_Rainbow**，相似度預設 **GAP_Blue_White_Red**；另有多種 Sequential / Diverging 色階 |
+| **Proximity** | Distance: Euclidean Distance, City-Block (L1)<br>Similarity: Pearson's Correlation, Kendall's tau, Spearman's Rank, atan Correlation, abs(Pearson's Correlation), Uncentered Correlation, abs(Uncentered Correlation) |
+| **Order** | **Order from Cube** (default; same as the current arrangement of the 3D cube), Original Order, Average / Single / Complete-Linkage, R2E, Random |
+| **Flip** | None, R2E, Uncle, GrandPa (available only with a linkage order) |
+| **Color** | Color scheme of the proximity matrix. Distances default to **GAP_Rainbow** and similarities to **GAP_Blue_White_Red**; various Sequential / Diverging schemes are also available |
 
-操作步驟：
+Steps:
 
-1. 先選 **Proximity**，畫面會出現對應的 proximity 矩陣。
-2. 再選 **Order**。Linkage 與 R2E 需先選好 Proximity 才能使用。
-3. 使用 Linkage 排序時，會畫出樹狀圖，並可選 **Flip**。
-4. 在 **Color** 選擇色階；點右側的色條可反轉顏色。
+1. Choose a **Proximity**; the corresponding proximity matrix appears.
+2. Choose an **Order**. Linkage and R2E require a Proximity to be selected first.
+3. With a linkage order, a dendrogram is drawn and **Flip** becomes available.
+4. Choose a color scheme under **Color**; click the color strip on the right to reverse it.
 
-### 7.5 矩陣圖配置
+### 7.5 Matrix plot layout
 
 ```
-                    Column 軸名稱
+                   Column axis name
           ┌───────────────┐
           │ Column        │  column    Column
-          │ proximity     │  名稱      樹狀圖
+          │ proximity     │  names     dendrogram
           └───────────────┘
   row     ┌───────────────┐  ┌───────────┐
-  名稱    │   資料矩陣     │  │ Row       │  Row
-          │               │  │ proximity │  樹狀圖
+  names   │  Data matrix  │  │ Row       │  Row
+          │               │  │ proximity │  dendrogram
           └───────────────┘  └───────────┘
-  切面摘要、proximity 色階圖例
+  Section summary and proximity color legends
 ```
 
-- 未選 Column proximity 時，column 名稱直立顯示在資料矩陣上方。
-- 滑鼠移到資料格子上，會顯示該格的類別與數值；移到 proximity 格子上，會顯示兩個類別與 proximity 值。
-- 被 Filter 篩掉或沒有數值的格子以淺灰色顯示。
-- 色階的對應範圍：相似度固定為 -1 到 1，距離為實際的最小值到最大值。
+- Without a column proximity, column names are shown vertically above the data matrix.
+- Hovering over a data cell shows its categories and value; hovering over a proximity cell shows the two categories and the proximity value.
+- Cells removed by the Filter or without a value are shown in light gray.
+- Color ranges: similarities are fixed to -1 to 1; distances span the actual minimum to maximum.
 
-### 7.6 縮放矩陣圖
+### 7.6 Zooming the matrix plot
 
-| 操作 | 動作 |
+| Action | How |
 |---|---|
-| 縮放 | 滑鼠滾輪 (以游標位置為中心，100%–3000%) |
-| 平移 | 放大後按住左鍵拖曳 |
-| 工具列 | 右上角 `−` 縮小、`+` 放大、`⤢` 回到原大小 |
-| 重設 | 雙擊矩陣圖 |
+| Zoom | Mouse wheel (centered on the cursor, 100%–3000%) |
+| Pan | Drag with the left mouse button while zoomed in |
+| Toolbar | Top-right `−` zoom out, `+` zoom in, `⤢` fit to window |
+| Reset | Double-click the matrix plot |
 
-格子太小時類別名稱會自動隱藏；放大或把視窗拉大後就會出現。
+Category names are hidden automatically when cells are too small; zoom in or enlarge the window to show them.
 
-### 7.7 自動更新
+### 7.7 Automatic updates
 
-- **切換切面**：移動 slider、按 `‹` `›` 或切換方向時，連動中 (🔗) 的視窗會改顯示新的切面。
-- **cube 重新排序**：改變 Order、Flip 或 Display Condition 時，所有視窗都會自動更新，並持續顯示**同一個類別**的切面，即使它在 cube 中的位置改變了。
-- 換切面或換色階時，矩陣圖的縮放狀態會保留。
+- **Changing the section**: moving the slider, clicking `‹` `›`, or switching direction updates all linked (🔗) windows to the new section.
+- **Reordering the cube**: changing Order, Flip, or Display Condition updates all windows automatically, and each window keeps showing the section of the **same category**, even if its position in the cube changes.
+- The zoom state of the matrix plot is kept when the section or the color scheme changes.
 
-### 7.8 缺失值
+### 7.8 Missing values
 
-切面中有缺失值時，proximity 以 **pairwise-complete** 方式計算：兩列 (或兩欄) 之間只使用兩者皆有值的欄位，距離會依可用欄位數放大以便比較。整列缺失或變異數為 0 而無法計算時，相似度以 0、距離以最大值代替。
+When a section contains missing values, proximity is computed with a **pairwise-complete** approach: between two rows (or columns), only the entries present in both are used, and distances are scaled up by the number of usable entries so they remain comparable. When a value still cannot be computed (e.g., an entirely missing row or zero variance), similarity is set to 0 and distance to the maximum distance.
 
 ---
 
-## 8. 匯出結果
+## 8. Exporting Results
 
-| 匯出方式 | 內容 |
+| Export | Content |
 |---|---|
-| **Export → Cube** | 3D cube 畫面 |
-| **Export → Proximity** | Proximity matrix 資料 |
-| **Export → Proximity Images** | Proximity 矩陣圖片 |
-| **Export → Charts** | 長條圖與直方圖 |
-| 切面視窗 **⤓** | 切面矩陣圖 (目前畫面，含縮放狀態) 的 PNG |
+| **Export → Cube** | The 3D cube view |
+| **Export → Proximity** | Proximity matrix data |
+| **Export → Proximity Images** | Proximity matrix images |
+| **Export → Charts** | Bar charts and histogram |
+| Section window **⤓** | PNG of the section matrix plot (current view, including zoom) |
 
 ---
 
-## 9. 常見問題
+## 9. FAQ
 
-**Q：開啟後看不到資料？**
-請確認是透過網頁伺服器 (例如 `http://localhost:8000`) 開啟，而不是直接雙擊 `index.html`。
+**Q: No data appears after opening the page.**
+Make sure you open it through a web server (e.g., `http://localhost:8000`), not by double-clicking `index.html`.
 
-**Q：Order 選單中的 Linkage、R2E 無法選取？**
-需先在 **Proximity** 計算該軸的 proximity matrix。切面視窗中則需先選擇該列 / 欄的 Proximity。
+**Q: Linkage and R2E cannot be selected in the Order list.**
+Compute the proximity matrix for that axis under **Proximity** first. In a section window, select a Proximity for that row / column first.
 
-**Q：Open in Browser Window 沒有反應？**
-瀏覽器封鎖了彈出視窗，請在網址列允許此網站開啟彈出視窗。
+**Q: Open in Browser Window does nothing.**
+The browser blocked the pop-up; allow pop-ups for this site in the address bar.
 
-**Q：切面矩陣圖看不到類別名稱？**
-格子太小時名稱會自動隱藏，請放大矩陣圖或把視窗拉大。
+**Q: I can't see category names in the section matrix plot.**
+Names are hidden when cells are too small; zoom in on the matrix plot or enlarge the window.
 
-**Q：想固定某個切面不隨 slider 改變？**
-按視窗標題列的 🔗 將它鎖定。
+**Q: How do I keep a section from changing with the slider?**
+Click 🔗 in the window's title bar to lock it.
 
 ---
 
-## 致謝
+## Acknowledgments
 
 Lab for Information Visualization
 Institute of Statistical Science, Academia Sinica
