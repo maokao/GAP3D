@@ -1,0 +1,180 @@
+/* ===== GAP3D Section View (切面) ===== */
+
+/* 側邊欄控制區 */
+.Sectionwhite-background {
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: 190px;
+    padding: 8px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.Sectionwhite-background .section-heading {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+#sectionAxis {
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.section-index-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.section-index-row input[type="range"] {
+    flex: 1;
+    min-width: 0;
+}
+
+.section-step-btn {
+    border: 1px solid #ced4da;
+    background: #fff;
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+    line-height: 18px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.section-step-btn:disabled {
+    cursor: not-allowed;
+    opacity: .4;
+}
+
+#sectionIndexLabel {
+    font-size: 12px;
+    color: #555;
+    margin: 4px 0 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.section-open-btn {
+    width: 100%;
+    margin-top: 6px;
+    padding: 4px 6px;
+    border: 1px solid #85a3f5;
+    background: #f3f5ff;
+    color: #2a4ab5;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.section-open-btn:hover {
+    background: #e3e9ff;
+}
+
+.section-open-btn.secondary {
+    border-color: #ced4da;
+    background: #fff;
+    color: #333;
+}
+
+.section-open-btn:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.section-hint {
+    font-size: 11px;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.35;
+    white-space: normal;
+}
+
+/* 浮動視窗 */
+.floating-window.section-window {
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 260px;
+    min-height: 120px;
+}
+
+.section-window-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 0 0 auto;
+}
+
+.section-window-title {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.section-window-btns {
+    display: flex;
+    gap: 2px;
+    flex: 0 0 auto;
+}
+
+.section-btn {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #555;
+}
+
+.section-btn:hover {
+    background: #e6e9f5;
+}
+
+.section-body {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.section-canvas {
+    display: block;
+}
+
+.section-tooltip {
+    position: absolute;
+    display: none;
+    pointer-events: none;
+    background: rgba(255, 255, 255, .96);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 12px;
+    line-height: 1.45;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+    white-space: nowrap;
+    z-index: 5;
+}
+
+/* 連動 (Linked) 狀態 */
+.section-btn.active {
+    background: #e3e9ff;
+}
+.section-btn:not(.active)[title^="Locked"] {
+    opacity: .45;
+}
+
+/* GAP 控制面板樣式由 js/section_gap.js (PANEL_CSS) 注入 */

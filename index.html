@@ -30,6 +30,9 @@
     <!-- awesome icon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+    <!-- Section View (切面) -->
+    <link rel="stylesheet" href="css/section_view.css">
+
     <!-- Template -->
     <link rel="stylesheet" href="public/graindashboard/css/graindashboard.css">
 
@@ -281,6 +284,7 @@
         // import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
         import * as THREE from './js/three.module.js';
         import { OrbitControls } from './js/OrbitControls.js';
+        import { initSectionView } from './js/section_view.js'; // 切面選擇與另開視窗
 
         $( function() {
             // 初始化雙按鈕滑動條
@@ -7711,6 +7715,15 @@
 
         animate();
 
+        // 切面 (Section View)：選擇 cube 任一切面並另開視窗顯示
+        window.gap3dSectionView = initSectionView({
+            THREE: THREE,
+            scene: scene,
+            renderer: renderer,
+            getCamera: () => camera,
+            startDrag: startDrag
+        });
+
     </script>
 
     <style>
@@ -9864,6 +9877,27 @@
                         <label for="SliceRange">Slices Gap</label><br>
                         <input type="range" id="SliceRange" min="1" max="4" step=".1" value="1">
                         <span id="SliceValue">1</span>
+
+                        <!-- Section View (切面) -->
+                        <div class="Sectionwhite-background">
+                            <span class="section-heading">Section View</span>
+                            <select id="sectionAxis">
+                                <option value="X">X-Section (Y &times; Z)</option>
+                                <option value="Y">Y-Section (X &times; Z)</option>
+                                <option value="Z">Z-Section (X &times; Y)</option>
+                            </select>
+                            <div class="section-index-row">
+                                <button type="button" id="sectionPrev" class="section-step-btn" title="Previous section">&lsaquo;</button>
+                                <input type="range" id="sectionIndex" min="0" max="0" step="1" value="0">
+                                <button type="button" id="sectionNext" class="section-step-btn" title="Next section">&rsaquo;</button>
+                            </div>
+                            <div id="sectionIndexLabel">No data loaded</div>
+                            <input type="checkbox" id="sectionHighlight">
+                            <label for="sectionHighlight">Highlight in cube</label>
+                            <button type="button" id="openSectionWindow" class="section-open-btn">Open Section Window</button>
+                            <button type="button" id="openSectionPopup" class="section-open-btn secondary">Open in Browser Window</button>
+                            <div class="section-hint">Double-click a cube to pick its section (Shift + double-click opens it).</div>
+                        </div>
                     </li>
                 </ul>
                 <!-- End subslice -->
