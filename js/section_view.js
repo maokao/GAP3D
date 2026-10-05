@@ -175,13 +175,16 @@ export function initSectionView(ctx) {
         const maxW = (arr) => arr.reduce((m, t) => Math.max(m, g.measureText(t).width), 0);
 
         let rowLW = Math.min(150, maxW(rowLabels)) + 6;
-        let colLH = Math.min(150, maxW(colLabels)) + 6;
-        let left, top;
-        // column 樹狀圖放在 column proximity 矩陣右側，與 row proximity / row 樹狀圖共用右側空間
-        const extraW = Math.max((rp ? gapPx : 0) + (rt ? gapPx + treeSize : 0), ct ? gapPx + treeSize : 0);
+        // 有 column proximity 矩陣時，column 名稱橫放在該矩陣右側 (矩陣與樹狀圖之間)；否則直立放在資料矩陣上方
+        let colLH = cp ? 0 : Math.min(150, maxW(colLabels)) + 6;
+        let colLabW = cp ? Math.min(150, maxW(colLabels)) + 6 : 0;
+        let left, top, extraW;
         const extraH = (cp ? gapPx : 0);
 
         const fit = () => {
+            // 右側空間：row proximity / row 樹狀圖 與 column 名稱 / column 樹狀圖 共用
+            extraW = Math.max((rp ? gapPx : 0) + (rt ? gapPx + treeSize : 0),
+                cp ? gapPx + colLabW + (ct ? gapPx + treeSize : 0) : 0);
             left = pad + titleSpace + rowLW;
             top = pad + titleSpace + colLH;
             const aw = W - left - pad - extraW, ah = H - top - pad - footH - extraH;
@@ -200,10 +203,10 @@ export function initSectionView(ctx) {
         const showRowLabels = ch >= 7, showColLabels = cw >= 7;
         if (!showRowLabels || !showColLabels) {
             if (!showRowLabels) rowLW = 0;
-            if (!showColLabels) colLH = 0;
+            if (!showColLabels) { colLH = 0; colLabW = 0; }
             [cw, ch] = fit();
         }
-        // 由上而下：軸名稱 → column 樹狀圖 → column proximity 矩陣 → column 標籤 → 資料矩陣
+        // 由上而下：軸名稱 → column proximity 矩陣 (右側：column 名稱、樹狀圖) → 資料矩陣
         const colProxY = pad + titleSpace;
         const x0 = left;
         const y0 = top + (cp ? nC * cw + gapPx : 0);
@@ -282,7 +285,7 @@ export function initSectionView(ctx) {
         if (ct) {
             const T = treeLayout(gr.col.tree, colOrder);
             // 樹狀圖在 column proximity 矩陣右側，葉節點對齊矩陣的列，根部朝右
-            const xt = x0 + nC * cw + gapPx;
+            const xt = x0 + nC * cw + colLabW + gapPx;
             const X = (h) => xt + (T.maxH > 0 ? h / T.maxH : 0) * treeSize;
             const Y = (p) => colProxY + (p + 0.5) * cw;
             g.beginPath();
@@ -308,7 +311,12 @@ export function initSectionView(ctx) {
             g.textAlign = 'right';
             for (let r = 0; r < nR; r++) g.fillText(clip(rowLabels[r], rowLW - 6), x0 - 4, y0 + (r + 0.5) * ch);
         }
-        if (showColLabels) {
+        if (showColLabels && cp) {
+            // column proximity 矩陣右側 (橫向)
+            g.font = FONT(Math.max(7, Math.min(11, Math.floor(cw - 1))));
+            g.textAlign = 'left';
+            for (let c = 0; c < nC; c++) g.fillText(clip(colLabels[c], colLabW - 6), x0 + nC * cw + 4, colProxY + (c + 0.5) * cw);
+        } else if (showColLabels) {
             g.font = FONT(Math.max(7, Math.min(11, Math.floor(cw - 1))));
             g.textAlign = 'left';
             for (let c = 0; c < nC; c++) {
