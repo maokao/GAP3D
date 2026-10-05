@@ -145,7 +145,8 @@ export function initSectionView(ctx) {
     // 以 canvas 繪製切面矩陣 (含 GAP：proximity 矩陣與樹狀圖)
     //   gr: computeGap() 的結果 (可為 null)
     // ------------------------------------------------------------------
-    function drawSection(canvas, s, gr, W, H, dpr) {
+    //   vt: 縮放 / 平移 { k, tx, ty }。以 k 倍大的虛擬畫布重新排版 (格子變大後標籤會出現)，再平移到可視範圍
+    function drawSection(canvas, s, gr, W, H, dpr, vt) {
         const nR = s.rowLabels.length, nC = s.colLabels.length;
         const g = canvas.getContext('2d');
         canvas.width = Math.max(1, Math.round(W * dpr));
@@ -156,6 +157,9 @@ export function initSectionView(ctx) {
         g.fillStyle = '#ffffff';
         g.fillRect(0, 0, W, H);
         if (!nR || !nC) return null;
+        const zk = vt ? vt.k : 1;
+        if (vt) g.setTransform(dpr, 0, 0, dpr, dpr * vt.tx, dpr * vt.ty);
+        W *= zk; H *= zk;
 
         const rowOrder = gr ? gr.row.order : [...Array(nR).keys()];
         const colOrder = gr ? gr.col.order : [...Array(nC).keys()];
@@ -173,8 +177,9 @@ export function initSectionView(ctx) {
         let rowLW = Math.min(150, maxW(rowLabels)) + 6;
         let colLH = Math.min(150, maxW(colLabels)) + 6;
         let left, top;
-        const extraW = (rp ? gapPx : 0) + (rt ? gapPx + treeSize : 0);
-        const extraH = (cp ? gapPx : 0) + (ct ? gapPx + treeSize : 0);
+        // column 樹狀圖放在 column proximity 矩陣右側，與 row proximity / row 樹狀圖共用右側空間
+        const extraW = Math.max((rp ? gapPx : 0) + (rt ? gapPx + treeSize : 0), ct ? gapPx + treeSize : 0);
+        const extraH = (cp ? gapPx : 0);
 
         const fit = () => {
             left = pad + titleSpace + rowLW;
@@ -182,12 +187,12 @@ export function initSectionView(ctx) {
             const aw = W - left - pad - extraW, ah = H - top - pad - footH - extraH;
             if (rp || cp) {
                 // 有 proximity 矩陣時使用正方形格子
-                const sz = Math.min(aw / (nC + (rp ? nR : 0)), ah / (nR + (cp ? nC : 0)), 40);
+                const sz = Math.min(aw / (nC + (rp ? nR : 0)), ah / (nR + (cp ? nC : 0)), 40 * zk);
                 return [Math.max(1, sz), Math.max(1, sz)];
             }
             // 否則格子寬高各自填滿視窗 (長寬比 1:3 ~ 3:1，最大 60px)
             let w = aw / nC, h = ah / nR;
-            w = Math.min(w, 60, h * 3); h = Math.min(h, 60, w * 3);
+            w = Math.min(w, 60 * zk, h * 3); h = Math.min(h, 60 * zk, w * 3);
             return [Math.max(1, w), Math.max(1, h)];
         };
         let [cw, ch] = fit();
@@ -199,10 +204,9 @@ export function initSectionView(ctx) {
             [cw, ch] = fit();
         }
         // 由上而下：軸名稱 → column 樹狀圖 → column proximity 矩陣 → column 標籤 → 資料矩陣
-        const colTreeY = pad + titleSpace;
-        const colProxY = colTreeY + (ct ? treeSize + gapPx : 0);
+        const colProxY = pad + titleSpace;
         const x0 = left;
-        const y0 = top + (ct ? treeSize + gapPx : 0) + (cp ? nC * cw + gapPx : 0);
+        const y0 = top + (cp ? nC * cw + gapPx : 0);
         const mw = cw * nC, mh = ch * nR;
         const L = { x0, y0, cw, ch, nR, nC, rowOrder, colOrder };
 
@@ -277,15 +281,15 @@ export function initSectionView(ctx) {
         }
         if (ct) {
             const T = treeLayout(gr.col.tree, colOrder);
-            // 樹狀圖在最上方，葉節點朝下 (靠近 column proximity 矩陣 / 資料矩陣)
-            const yt = colTreeY;
-            const Y = (h) => yt + treeSize - (T.maxH > 0 ? h / T.maxH : 0) * treeSize;
-            const X = (p) => x0 + (p + 0.5) * cw;
+            // 樹狀圖在 column proximity 矩陣右側，葉節點對齊矩陣的列，根部朝右
+            const xt = x0 + nC * cw + gapPx;
+            const X = (h) => xt + (T.maxH > 0 ? h / T.maxH : 0) * treeSize;
+            const Y = (p) => colProxY + (p + 0.5) * cw;
             g.beginPath();
             for (let t = 0; t < T.n - 1; t++) {
                 const node = T.n + t, a = gr.col.tree.left[t], b = gr.col.tree.right[t];
-                g.moveTo(X(T.pos[a]), Y(T.hgt[a])); g.lineTo(X(T.pos[a]), Y(T.hgt[node]));
-                g.lineTo(X(T.pos[b]), Y(T.hgt[node])); g.lineTo(X(T.pos[b]), Y(T.hgt[b]));
+                g.moveTo(X(T.hgt[a]), Y(T.pos[a])); g.lineTo(X(T.hgt[node]), Y(T.pos[a]));
+                g.lineTo(X(T.hgt[node]), Y(T.pos[b])); g.lineTo(X(T.hgt[b]), Y(T.pos[b]));
             }
             g.stroke();
         }
@@ -380,6 +384,8 @@ export function initSectionView(ctx) {
 
         let cur = sec;
         let layout = null;
+        const vt = { k: 1, tx: 0, ty: 0 }; // 縮放與平移狀態
+        const ZMIN = 1, ZMAX = 30;
         let gr = null, grKey = null, grSec = null;
 
         function gapResult() {
@@ -407,13 +413,82 @@ export function initSectionView(ctx) {
                 if (r.row.prox) r.row.scale = makeProxScale(r.row, gs.row);
                 if (r.col.prox) r.col.scale = makeProxScale(r.col, gs.col);
             }
-            layout = drawSection(canvas, cur, r, W, H, win.devicePixelRatio || 1);
+            clampPan(W, H);
+            layout = drawSection(canvas, cur, r, W, H, win.devicePixelRatio || 1, vt);
+            zoomLabel.textContent = Math.round(vt.k * 100) + '%';
+            canvas.style.cursor = vt.k > 1 ? (dragging ? 'grabbing' : 'grab') : 'default';
         }
 
-        canvas.addEventListener('mousemove', (e) => {
-            if (!layout) return;
+        // ---------------- 縮放 / 平移 ----------------
+        function clampPan(W, H) {
+            vt.tx = Math.min(0, Math.max(W - W * vt.k, vt.tx));
+            vt.ty = Math.min(0, Math.max(H - H * vt.k, vt.ty));
+        }
+        // 以畫面上的 (px, py) 為中心縮放
+        function zoomAt(px, py, factor) {
+            const k2 = Math.max(ZMIN, Math.min(ZMAX, vt.k * factor));
+            const r = k2 / vt.k;
+            vt.tx = px - (px - vt.tx) * r;
+            vt.ty = py - (py - vt.ty) * r;
+            vt.k = k2;
+            draw();
+        }
+        function resetZoom() { vt.k = 1; vt.tx = 0; vt.ty = 0; draw(); }
+
+        const zoomBar = doc.createElement('div');
+        zoomBar.className = 'section-zoom';
+        const zbtn = (text, title, fn) => {
+            const b = doc.createElement('button');
+            b.type = 'button';
+            b.textContent = text;
+            b.title = title;
+            b.addEventListener('mousedown', (e) => e.stopPropagation());
+            b.addEventListener('click', (e) => { e.stopPropagation(); fn(); });
+            zoomBar.appendChild(b);
+            return b;
+        };
+        zbtn('−', 'Zoom out', () => zoomAt(container.clientWidth / 2, container.clientHeight / 2, 1 / 1.25));
+        const zoomLabel = doc.createElement('span');
+        zoomLabel.className = 'section-zoom-label';
+        zoomLabel.title = 'Double-click the matrix to reset';
+        zoomBar.appendChild(zoomLabel);
+        zbtn('+', 'Zoom in', () => zoomAt(container.clientWidth / 2, container.clientHeight / 2, 1.25));
+        zbtn('⤢', 'Fit to window (reset zoom)', resetZoom);
+        container.appendChild(zoomBar);
+
+        canvas.addEventListener('wheel', (e) => {
+            e.preventDefault();
             const rect = canvas.getBoundingClientRect();
-            const x = e.clientX - rect.left, y = e.clientY - rect.top;
+            zoomAt(e.clientX - rect.left, e.clientY - rect.top, Math.exp(-e.deltaY * 0.0015));
+        }, { passive: false });
+        canvas.addEventListener('dblclick', resetZoom);
+
+        let dragging = false, dragX = 0, dragY = 0;
+        canvas.addEventListener('mousedown', (e) => {
+            if (e.button !== 0 || vt.k <= 1) return;
+            e.preventDefault();
+            e.stopPropagation();
+            dragging = true; dragX = e.clientX; dragY = e.clientY;
+            tip.style.display = 'none';
+            canvas.style.cursor = 'grabbing';
+        });
+        win.addEventListener('mousemove', (e) => {
+            if (!dragging) return;
+            vt.tx += e.clientX - dragX; vt.ty += e.clientY - dragY;
+            dragX = e.clientX; dragY = e.clientY;
+            draw();
+        });
+        win.addEventListener('mouseup', () => {
+            if (!dragging) return;
+            dragging = false;
+            draw();
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (!layout || dragging) return;
+            const rect = canvas.getBoundingClientRect();
+            const sx = e.clientX - rect.left, sy = e.clientY - rect.top;
+            const x = sx - vt.tx, y = sy - vt.ty; // 轉成虛擬畫布座標
             let html = null;
             const c = Math.floor((x - layout.x0) / layout.cw);
             const r = Math.floor((y - layout.y0) / layout.ch);
@@ -436,9 +511,9 @@ export function initSectionView(ctx) {
             tip.innerHTML = html;
             tip.style.display = 'block';
             const cw = container.clientWidth, chh = container.clientHeight;
-            let tx = x + 14, ty = y + 14;
-            if (tx + tip.offsetWidth > cw) tx = Math.max(0, x - tip.offsetWidth - 10);
-            if (ty + tip.offsetHeight > chh) ty = Math.max(0, y - tip.offsetHeight - 10);
+            let tx = sx + 14, ty = sy + 14;
+            if (tx + tip.offsetWidth > cw) tx = Math.max(0, sx - tip.offsetWidth - 10);
+            if (ty + tip.offsetHeight > chh) ty = Math.max(0, sy - tip.offsetHeight - 10);
             tip.style.left = tx + 'px';
             tip.style.top = ty + 'px';
         });
@@ -457,7 +532,8 @@ export function initSectionView(ctx) {
             gs,
             redraw: draw,
             get section() { return cur; },
-            set section(s) { cur = s; draw(); },
+            set section(s) { cur = s; draw(); },   // 換切面時保留縮放
+            resetZoom,
             // 轉置：切面與 row / column 的 GAP 設定一起交換
             transpose() {
                 const t = gs.row; gs.row = gs.col; gs.col = t;

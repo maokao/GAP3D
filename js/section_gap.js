@@ -342,6 +342,10 @@ export const PANEL_CSS = `
 .section-gap-swatch{flex:0 0 30px;height:16px;padding:0;border:1px solid #c9cdd8;border-radius:3px;cursor:pointer}
 .section-gap-swatch:hover:not(:disabled){box-shadow:0 0 0 2px rgba(133,163,245,.35)}
 .section-gap-swatch:disabled{cursor:not-allowed;opacity:.4}
+.section-zoom{position:absolute;top:8px;right:8px;z-index:4;display:flex;align-items:center;gap:1px;padding:2px;background:rgba(255,255,255,.92);border:1px solid #d5d9e3;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.08);user-select:none}
+.section-zoom button{width:24px;height:22px;padding:0;border:none;border-radius:4px;background:transparent;color:#4a4f63;font-size:15px;line-height:1;cursor:pointer}
+.section-zoom button:hover{background:#e6e9f5}
+.section-zoom-label{min-width:42px;text-align:center;font-size:11px;color:#666;font-variant-numeric:tabular-nums}
 .section-gap-msg{position:absolute;left:10px;bottom:10px;display:none;color:#c62828;font-size:12px}
 `;
 
